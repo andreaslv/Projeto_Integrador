@@ -62,9 +62,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            groupBox1.Location = new Point(-5, 0);
+            groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(409, 450);
+            groupBox1.Size = new Size(771, 551);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Novo Pedido";
@@ -213,7 +213,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowFrame;
-            ClientSize = new Size(401, 448);
+            ClientSize = new Size(771, 551);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
