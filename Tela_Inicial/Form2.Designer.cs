@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            textBox1 = new TextBox();
             button4 = new Button();
+            textBox1 = new TextBox();
+            comboBox4 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,88 +70,47 @@
             groupBox1.Text = "Novo Pedido";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // label1
+            // button4
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label1.Location = new Point(6, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 19);
-            label1.TabIndex = 1;
-            label1.Text = "Nome do cliente";
+            button4.BackColor = Color.Silver;
+            button4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button4.Location = new Point(99, 368);
+            button4.Name = "button4";
+            button4.Size = new Size(149, 38);
+            button4.TabIndex = 13;
+            button4.Text = "Salvar Pedido";
+            button4.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // textBox1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label2.Location = new Point(5, 95);
-            label2.Name = "label2";
-            label2.Size = new Size(109, 19);
-            label2.TabIndex = 2;
-            label2.Text = "Itens do pedido:";
+            textBox1.BackColor = SystemColors.ScrollBar;
+            textBox1.Location = new Point(23, 48);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(315, 32);
+            textBox1.TabIndex = 12;
             // 
-            // label3
+            // comboBox4
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label3.Location = new Point(6, 181);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 19);
-            label3.TabIndex = 3;
-            label3.Text = "Endereço";
+            comboBox4.BackColor = SystemColors.ScrollBar;
+            comboBox4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(241, 135);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(92, 25);
+            comboBox4.TabIndex = 11;
+            comboBox4.Text = "Refrigerante";
             // 
-            // label4
+            // comboBox3
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(5, 259);
-            label4.Name = "label4";
-            label4.Size = new Size(200, 25);
-            label4.TabIndex = 4;
-            label4.Text = "Forma de Pagamento:";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Silver;
-            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button1.Location = new Point(23, 302);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 35);
-            button1.TabIndex = 5;
-            button1.Text = "Dinheiro";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Silver;
-            button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button2.Location = new Point(130, 302);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 35);
-            button2.TabIndex = 6;
-            button2.Text = "Pix";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Silver;
-            button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button3.Location = new Point(241, 296);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 47);
-            button3.TabIndex = 7;
-            button3.Text = "Cartão";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.ScrollBar;
-            comboBox1.ForeColor = SystemColors.WindowFrame;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(23, 203);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(292, 33);
-            comboBox1.TabIndex = 8;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox3.BackColor = SystemColors.ScrollBar;
+            comboBox3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Batata frita", "Onion Ring", "" });
+            comboBox3.Location = new Point(126, 135);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(94, 25);
+            comboBox3.TabIndex = 10;
+            comboBox3.Text = "Acompanhamentos";
             // 
             // comboBox2
             // 
@@ -166,47 +125,88 @@
             comboBox2.Text = "Lanches";
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
-            // comboBox3
+            // comboBox1
             // 
-            comboBox3.BackColor = SystemColors.ScrollBar;
-            comboBox3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Batata frita", "Onion Ring", "" });
-            comboBox3.Location = new Point(126, 135);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(94, 25);
-            comboBox3.TabIndex = 10;
-            comboBox3.Text = "Acompanhamentos";
+            comboBox1.BackColor = SystemColors.ScrollBar;
+            comboBox1.ForeColor = SystemColors.WindowFrame;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(23, 203);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(292, 33);
+            comboBox1.TabIndex = 8;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // comboBox4
+            // button3
             // 
-            comboBox4.BackColor = SystemColors.ScrollBar;
-            comboBox4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(241, 135);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(92, 25);
-            comboBox4.TabIndex = 11;
-            comboBox4.Text = "Refrigerante";
+            button3.BackColor = Color.Silver;
+            button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button3.Location = new Point(241, 296);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 47);
+            button3.TabIndex = 7;
+            button3.Text = "Cartão";
+            button3.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // button2
             // 
-            textBox1.BackColor = SystemColors.ScrollBar;
-            textBox1.Location = new Point(23, 48);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(315, 32);
-            textBox1.TabIndex = 12;
+            button2.BackColor = Color.Silver;
+            button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button2.Location = new Point(130, 302);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 35);
+            button2.TabIndex = 6;
+            button2.Text = "Pix";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button1
             // 
-            button4.BackColor = Color.Silver;
-            button4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button4.Location = new Point(99, 368);
-            button4.Name = "button4";
-            button4.Size = new Size(149, 38);
-            button4.TabIndex = 13;
-            button4.Text = "Salvar Pedido";
-            button4.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Silver;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button1.Location = new Point(23, 302);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 35);
+            button1.TabIndex = 5;
+            button1.Text = "Dinheiro";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(5, 259);
+            label4.Name = "label4";
+            label4.Size = new Size(200, 25);
+            label4.TabIndex = 4;
+            label4.Text = "Forma de Pagamento:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            label3.Location = new Point(6, 181);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 19);
+            label3.TabIndex = 3;
+            label3.Text = "Endereço";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            label2.Location = new Point(5, 95);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 19);
+            label2.TabIndex = 2;
+            label2.Text = "Itens do pedido:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            label1.Location = new Point(6, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 19);
+            label1.TabIndex = 1;
+            label1.Text = "Nome do cliente";
             // 
             // Form2
             // 
@@ -215,7 +215,7 @@
             BackColor = SystemColors.WindowFrame;
             ClientSize = new Size(401, 448);
             Controls.Add(groupBox1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
             Padding = new Padding(15, 20, 15, 20);
             StartPosition = FormStartPosition.CenterScreen;
