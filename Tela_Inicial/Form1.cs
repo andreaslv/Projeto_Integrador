@@ -17,15 +17,18 @@ namespace Tela_Inicial
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            pnl_NvPedido.Controls.Clear();
+            PedidosProntosUC PedidosProntosUC = new PedidosProntosUC();
+            PedidosProntosUC.Dock = DockStyle.Fill;
+            pnl_NvPedido.Controls.Add(PedidosProntosUC);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             pnl_NvPedido.Controls.Clear();
-            Form2 NovoPedido = new Form2();
-            NovoPedido.Dock = DockStyle.Fill;
-            pnl_NvPedido.Controls.Add(NovoPedido);
+            NovoPedidoUC NovoPedidoUC = new NovoPedidoUC();
+            NovoPedidoUC.Dock = DockStyle.Fill;
+            pnl_NvPedido.Controls.Add(NovoPedidoUC);
         }
 
     }
