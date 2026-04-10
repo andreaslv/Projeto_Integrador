@@ -1,4 +1,4 @@
-namespace Tela_Inicial
+namespace TelaLogin
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Tela_Inicial
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new telaLogin());
+            Application.Run(new Form1());
         }
     }
 }
