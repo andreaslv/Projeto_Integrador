@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaLogin));
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            label2 = new Label();
+            button1 = new Button();
             label1 = new Label();
             Login = new Label();
-            button1 = new Button();
-            label2 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
@@ -51,33 +53,31 @@
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(191, -4);
+            panel1.Location = new Point(191, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(372, 543);
+            panel1.Size = new Size(372, 540);
             panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // label2
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(108, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 149);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(113, 397);
+            label2.Name = "label2";
+            label2.Size = new Size(129, 17);
+            label2.TabIndex = 1;
+            label2.Text = "Esqueci minha senha";
             // 
-            // textBox1
+            // button1
             // 
-            textBox1.Location = new Point(113, 245);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(145, 23);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(113, 316);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(145, 23);
-            textBox2.TabIndex = 3;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(141, 457);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 31);
+            button1.TabIndex = 1;
+            button1.Text = "Entrar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -102,26 +102,40 @@
             Login.TabIndex = 2;
             Login.Text = "Login:";
             // 
-            // button1
+            // textBox2
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(141, 457);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 31);
-            button1.TabIndex = 1;
-            button1.Text = "Entrar";
-            button1.UseVisualStyleBackColor = true;
+            textBox2.Location = new Point(113, 316);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(145, 23);
+            textBox2.TabIndex = 3;
             // 
-            // label2
+            // textBox1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(113, 397);
-            label2.Name = "label2";
-            label2.Size = new Size(129, 17);
-            label2.TabIndex = 1;
-            label2.Text = "Esqueci minha senha";
+            textBox1.Location = new Point(113, 245);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(145, 23);
+            textBox1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(108, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(150, 149);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(350, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(19, 21);
+            label3.TabIndex = 1;
+            label3.Text = "x";
+            label3.Click += label3_Click;
             // 
             // telaLogin
             // 
@@ -133,6 +147,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "telaLogin";
             Text = "telaLogin";
+            Load += telaLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -149,5 +164,6 @@
         private TextBox textBox2;
         private Label label2;
         private Button button1;
+        private Label label3;
     }
 }
