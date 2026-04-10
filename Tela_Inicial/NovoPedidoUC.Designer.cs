@@ -57,7 +57,7 @@
             // 
             button4.BackColor = Color.Silver;
             button4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button4.Location = new Point(131, 447);
+            button4.Location = new Point(136, 447);
             button4.Name = "button4";
             button4.Size = new Size(149, 38);
             button4.TabIndex = 26;
@@ -220,10 +220,10 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label6.Location = new Point(588, 129);
+            label6.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(585, 126);
             label6.Name = "label6";
-            label6.Size = new Size(52, 19);
+            label6.Size = new Size(64, 21);
             label6.TabIndex = 16;
             label6.Text = "Pedido";
             // 
