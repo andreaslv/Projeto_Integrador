@@ -82,7 +82,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(236, 15);
+            label1.Location = new Point(238, 22);
             label1.Name = "label1";
             label1.Size = new Size(219, 31);
             label1.TabIndex = 0;
@@ -241,6 +241,7 @@
             // 
             // pnl_NvPedido
             // 
+            pnl_NvPedido.BackColor = SystemColors.InactiveBorder;
             pnl_NvPedido.Location = new Point(48, 26);
             pnl_NvPedido.Name = "pnl_NvPedido";
             pnl_NvPedido.Size = new Size(771, 551);
@@ -248,7 +249,7 @@
             // 
             // panel6
             // 
-            panel6.BackColor = SystemColors.ControlDark;
+            panel6.BackColor = SystemColors.ControlLight;
             panel6.Controls.Add(label2);
             panel6.Controls.Add(dataGridView1);
             panel6.Location = new Point(1083, 55);
@@ -272,7 +273,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(10, 57);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(367, 595);
+            dataGridView1.Size = new Size(367, 577);
             dataGridView1.TabIndex = 2;
             // 
             // button1
@@ -312,6 +313,7 @@
             button4.TabIndex = 2;
             button4.Text = "Finalizados";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 

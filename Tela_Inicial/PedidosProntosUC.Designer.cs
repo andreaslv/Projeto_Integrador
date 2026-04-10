@@ -30,9 +30,9 @@
         {
             dataGridView1 = new DataGridView();
             Pedido = new DataGridViewTextBoxColumn();
-            Observação = new DataGridViewTextBoxColumn();
+            Horario = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            horario = new DataGridViewTextBoxColumn();
+            Observação = new DataGridViewTextBoxColumn();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -46,10 +46,10 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Pedido, Observação, Status, horario });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Pedido, Horario, Status, Observação });
             dataGridView1.Location = new Point(52, 85);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(660, 300);
+            dataGridView1.Size = new Size(660, 328);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -57,21 +57,24 @@
             // 
             Pedido.HeaderText = "Pedido";
             Pedido.Name = "Pedido";
+            Pedido.Width = 120;
             // 
-            // Observação
+            // Horario
             // 
-            Observação.HeaderText = "Observação";
-            Observação.Name = "Observação";
+            Horario.HeaderText = "Horário";
+            Horario.Name = "Horario";
             // 
             // Status
             // 
             Status.HeaderText = "Status";
             Status.Name = "Status";
+            Status.Width = 150;
             // 
-            // horario
+            // Observação
             // 
-            horario.HeaderText = "horario";
-            horario.Name = "horario";
+            Observação.HeaderText = "Observação";
+            Observação.Name = "Observação";
+            Observação.Width = 250;
             // 
             // button1
             // 
@@ -80,7 +83,7 @@
             button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(52, 458);
             button1.Name = "button1";
-            button1.Size = new Size(155, 34);
+            button1.Size = new Size(155, 38);
             button1.TabIndex = 2;
             button1.Text = "Entregar pedido";
             button1.UseVisualStyleBackColor = false;
@@ -91,7 +94,7 @@
             button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             button2.Location = new Point(291, 458);
             button2.Name = "button2";
-            button2.Size = new Size(168, 34);
+            button2.Size = new Size(168, 38);
             button2.TabIndex = 3;
             button2.Text = "Voltar para o preparo";
             button2.UseVisualStyleBackColor = false;
@@ -102,7 +105,7 @@
             button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             button3.Location = new Point(536, 458);
             button3.Name = "button3";
-            button3.Size = new Size(158, 34);
+            button3.Size = new Size(158, 38);
             button3.TabIndex = 4;
             button3.Text = "Cancelar pedido";
             button3.UseVisualStyleBackColor = false;
@@ -147,11 +150,11 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private DataGridViewTextBoxColumn Pedido;
-        private DataGridViewTextBoxColumn Observação;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn horario;
         private Panel panel1;
         private Label label2;
+        private DataGridViewTextBoxColumn Pedido;
+        private DataGridViewTextBoxColumn Horario;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn Observação;
     }
 }

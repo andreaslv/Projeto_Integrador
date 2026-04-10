@@ -31,5 +31,12 @@ namespace Tela_Inicial
             pnl_NvPedido.Controls.Add(NovoPedidoUC);
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pnl_NvPedido.Controls.Clear();
+            PedidosFinalizadosUC PedidosFinalizadosUC = new PedidosFinalizadosUC();
+            PedidosFinalizadosUC.Dock = DockStyle.Fill;
+            pnl_NvPedido.Controls.Add(PedidosFinalizadosUC);
+        }
     }
 }

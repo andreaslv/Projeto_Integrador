@@ -35,8 +35,8 @@
             button2 = new Button();
             Pedidos = new DataGridViewTextBoxColumn();
             Itens_do_Pedido = new DataGridViewTextBoxColumn();
-            Observações = new DataGridViewTextBoxColumn();
             Tempo_em_preparo = new DataGridViewTextBoxColumn();
+            Observações = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.MenuBar;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Pedidos, Itens_do_Pedido, Observações, Tempo_em_preparo });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Pedidos, Itens_do_Pedido, Tempo_em_preparo, Observações });
             dataGridView1.Location = new Point(19, 57);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(733, 388);
@@ -73,7 +73,7 @@
             // 
             button1.Location = new Point(124, 483);
             button1.Name = "button1";
-            button1.Size = new Size(250, 34);
+            button1.Size = new Size(250, 38);
             button1.TabIndex = 2;
             button1.Text = "Marcar como Pronto";
             button1.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             // 
             button2.Location = new Point(399, 483);
             button2.Name = "button2";
-            button2.Size = new Size(249, 34);
+            button2.Size = new Size(249, 38);
             button2.TabIndex = 2;
             button2.Text = "Cancelar Pedido";
             button2.UseVisualStyleBackColor = true;
@@ -99,17 +99,17 @@
             Itens_do_Pedido.Name = "Itens_do_Pedido";
             Itens_do_Pedido.Width = 200;
             // 
-            // Observações
-            // 
-            Observações.HeaderText = "Observações";
-            Observações.Name = "Observações";
-            Observações.Width = 180;
-            // 
             // Tempo_em_preparo
             // 
             Tempo_em_preparo.HeaderText = "Tempo_em_preparo";
             Tempo_em_preparo.Name = "Tempo_em_preparo";
-            Tempo_em_preparo.Width = 200;
+            Tempo_em_preparo.Width = 180;
+            // 
+            // Observações
+            // 
+            Observações.HeaderText = "Observações";
+            Observações.Name = "Observações";
+            Observações.Width = 200;
             // 
             // EmPreparoUC
             // 
@@ -133,11 +133,11 @@
         private Panel panel1;
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Pedidos;
-        private DataGridViewTextBoxColumn Itens_do_Pedido;
-        private DataGridViewTextBoxColumn Observações;
-        private DataGridViewTextBoxColumn Tempo_em_preparo;
         private Button button1;
         private Button button2;
+        private DataGridViewTextBoxColumn Pedidos;
+        private DataGridViewTextBoxColumn Itens_do_Pedido;
+        private DataGridViewTextBoxColumn Tempo_em_preparo;
+        private DataGridViewTextBoxColumn Observações;
     }
 }
