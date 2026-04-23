@@ -30,25 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosFinalizadosUC));
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            cbData = new ComboBox();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvPedidosFinalizados = new DataGridView();
             Pedidos = new DataGridViewTextBoxColumn();
             Valor = new DataGridViewTextBoxColumn();
             Forma_de_pagamento = new DataGridViewTextBoxColumn();
             Horario = new DataGridViewTextBoxColumn();
             Observação = new DataGridViewTextBoxColumn();
-            button1 = new Button();
+            btnDetalhesPedido = new Button();
             panel1 = new Panel();
             label5 = new Label();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             label3 = new Label();
             label4 = new Label();
             label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            lblNumeroPedidos = new Label();
+            lblValorTotalDia = new Label();
+            btnPesquisar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidosFinalizados).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,13 +63,13 @@
             label1.Text = "Buscar:";
             label1.Click += label1_Click;
             // 
-            // comboBox1
+            // cbData
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(485, 67);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(167, 23);
-            comboBox1.TabIndex = 1;
+            cbData.FormattingEnabled = true;
+            cbData.Location = new Point(485, 67);
+            cbData.Name = "cbData";
+            cbData.Size = new Size(167, 23);
+            cbData.TabIndex = 1;
             // 
             // label2
             // 
@@ -82,15 +82,15 @@
             label2.Text = "Data:";
             label2.Click += label1_Click;
             // 
-            // dataGridView1
+            // dgvPedidosFinalizados
             // 
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Pedidos, Valor, Forma_de_pagamento, Horario, Observação });
-            dataGridView1.Location = new Point(32, 106);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(702, 318);
-            dataGridView1.TabIndex = 2;
+            dgvPedidosFinalizados.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvPedidosFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidosFinalizados.Columns.AddRange(new DataGridViewColumn[] { Pedidos, Valor, Forma_de_pagamento, Horario, Observação });
+            dgvPedidosFinalizados.Location = new Point(32, 106);
+            dgvPedidosFinalizados.Name = "dgvPedidosFinalizados";
+            dgvPedidosFinalizados.Size = new Size(702, 318);
+            dgvPedidosFinalizados.TabIndex = 2;
             // 
             // Pedidos
             // 
@@ -120,14 +120,14 @@
             Observação.Name = "Observação";
             Observação.Width = 210;
             // 
-            // button1
+            // btnDetalhesPedido
             // 
-            button1.Location = new Point(286, 486);
-            button1.Name = "button1";
-            button1.Size = new Size(202, 38);
-            button1.TabIndex = 3;
-            button1.Text = "Ver detalhes do pedido";
-            button1.UseVisualStyleBackColor = true;
+            btnDetalhesPedido.Location = new Point(286, 486);
+            btnDetalhesPedido.Name = "btnDetalhesPedido";
+            btnDetalhesPedido.Size = new Size(202, 38);
+            btnDetalhesPedido.TabIndex = 3;
+            btnDetalhesPedido.Text = "Ver detalhes do pedido";
+            btnDetalhesPedido.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -147,12 +147,12 @@
             label5.TabIndex = 0;
             label5.Text = "PEDIDOS FINALIZADOS";
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Location = new Point(130, 67);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 23);
-            textBox1.TabIndex = 29;
+            txtBuscar.Location = new Point(130, 67);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(214, 23);
+            txtBuscar.TabIndex = 29;
             // 
             // label3
             // 
@@ -187,58 +187,58 @@
             label6.Text = "Total de pedidos:";
             label6.Click += label1_Click;
             // 
-            // label7
+            // lblNumeroPedidos
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Symbol", 9.75F);
-            label7.Location = new Point(565, 444);
-            label7.Name = "label7";
-            label7.Size = new Size(126, 17);
-            label7.TabIndex = 0;
-            label7.Text = "numero_de_pedidos";
-            label7.Click += label1_Click;
+            lblNumeroPedidos.AutoSize = true;
+            lblNumeroPedidos.Font = new Font("Segoe UI Symbol", 9.75F);
+            lblNumeroPedidos.Location = new Point(565, 444);
+            lblNumeroPedidos.Name = "lblNumeroPedidos";
+            lblNumeroPedidos.Size = new Size(126, 17);
+            lblNumeroPedidos.TabIndex = 0;
+            lblNumeroPedidos.Text = "numero_de_pedidos";
+            lblNumeroPedidos.Click += label1_Click;
             // 
-            // label8
+            // lblValorTotalDia
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Symbol", 9.75F);
-            label8.Location = new Point(195, 442);
-            label8.Name = "label8";
-            label8.Size = new Size(37, 17);
-            label8.TabIndex = 0;
-            label8.Text = "valor";
-            label8.Click += label1_Click;
+            lblValorTotalDia.AutoSize = true;
+            lblValorTotalDia.Font = new Font("Segoe UI Symbol", 9.75F);
+            lblValorTotalDia.Location = new Point(195, 442);
+            lblValorTotalDia.Name = "lblValorTotalDia";
+            lblValorTotalDia.Size = new Size(37, 17);
+            lblValorTotalDia.TabIndex = 0;
+            lblValorTotalDia.Text = "valor";
+            lblValorTotalDia.Click += label1_Click;
             // 
-            // button2
+            // btnPesquisar
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.Location = new Point(350, 66);
-            button2.Name = "button2";
-            button2.Size = new Size(45, 25);
-            button2.TabIndex = 30;
-            button2.UseVisualStyleBackColor = true;
+            btnPesquisar.BackgroundImage = (Image)resources.GetObject("btnPesquisar.BackgroundImage");
+            btnPesquisar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPesquisar.Location = new Point(350, 66);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(45, 25);
+            btnPesquisar.TabIndex = 30;
+            btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // PedidosFinalizadosUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(textBox1);
+            Controls.Add(btnPesquisar);
+            Controls.Add(txtBuscar);
             Controls.Add(panel1);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(comboBox1);
+            Controls.Add(btnDetalhesPedido);
+            Controls.Add(dgvPedidosFinalizados);
+            Controls.Add(cbData);
             Controls.Add(label2);
             Controls.Add(label4);
-            Controls.Add(label8);
-            Controls.Add(label7);
+            Controls.Add(lblValorTotalDia);
+            Controls.Add(lblNumeroPedidos);
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label1);
             Name = "PedidosFinalizadosUC";
             Size = new Size(771, 551);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidosFinalizados).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -248,23 +248,23 @@
         #endregion
 
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox cbData;
         private Label label2;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private DataGridView dgvPedidosFinalizados;
+        private Button btnDetalhesPedido;
         private Panel panel1;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtBuscar;
         private Label label3;
         private Label label4;
         private Label label6;
-        private Label label7;
-        private Label label8;
+        private Label lblNumeroPedidos;
+        private Label lblValorTotalDia;
         private DataGridViewTextBoxColumn Pedidos;
         private DataGridViewTextBoxColumn Valor;
         private DataGridViewTextBoxColumn Forma_de_pagamento;
         private DataGridViewTextBoxColumn Horario;
         private DataGridViewTextBoxColumn Observação;
-        private Button button2;
+        private Button btnPesquisar;
     }
 }

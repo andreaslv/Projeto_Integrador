@@ -28,127 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            textBox1 = new TextBox();
-            comboBox4 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnSalvarPedido = new Button();
+            txtNomeCliente = new TextBox();
+            cbBebidas = new ComboBox();
+            cbAcompanhamento = new ComboBox();
+            cbMesa = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             label5 = new Label();
             panel1 = new Panel();
-            listBox1 = new ListBox();
+            ltbPedido = new ListBox();
             label6 = new Label();
-            textBox2 = new TextBox();
+            txtObservacoes = new TextBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            label10 = new Label();
+            lblTotalNvPedido = new Label();
+            comboBox1 = new ComboBox();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
+            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // button4
+            // btnSalvarPedido
             // 
-            button4.BackColor = Color.Silver;
-            button4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button4.Location = new Point(136, 447);
-            button4.Name = "button4";
-            button4.Size = new Size(149, 38);
-            button4.TabIndex = 26;
-            button4.Text = "Salvar Pedido";
-            button4.UseVisualStyleBackColor = false;
+            btnSalvarPedido.BackColor = Color.Silver;
+            btnSalvarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnSalvarPedido.Location = new Point(136, 447);
+            btnSalvarPedido.Name = "btnSalvarPedido";
+            btnSalvarPedido.Size = new Size(149, 38);
+            btnSalvarPedido.TabIndex = 26;
+            btnSalvarPedido.Text = "Salvar Pedido";
+            btnSalvarPedido.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtNomeCliente
             // 
-            textBox1.BackColor = SystemColors.ScrollBar;
-            textBox1.Location = new Point(38, 87);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(315, 23);
-            textBox1.TabIndex = 25;
+            txtNomeCliente.BackColor = SystemColors.ScrollBar;
+            txtNomeCliente.Location = new Point(38, 87);
+            txtNomeCliente.Name = "txtNomeCliente";
+            txtNomeCliente.Size = new Size(315, 23);
+            txtNomeCliente.TabIndex = 25;
             // 
-            // comboBox4
+            // cbBebidas
             // 
-            comboBox4.BackColor = SystemColors.ScrollBar;
-            comboBox4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(342, 168);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(109, 25);
-            comboBox4.TabIndex = 24;
-            comboBox4.Text = "Refrigerante";
+            cbBebidas.BackColor = SystemColors.ScrollBar;
+            cbBebidas.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            cbBebidas.FormattingEnabled = true;
+            cbBebidas.Location = new Point(342, 168);
+            cbBebidas.Name = "cbBebidas";
+            cbBebidas.Size = new Size(109, 25);
+            cbBebidas.TabIndex = 24;
+            cbBebidas.Text = "Bebidas";
             // 
-            // comboBox3
+            // cbAcompanhamento
             // 
-            comboBox3.BackColor = SystemColors.ScrollBar;
-            comboBox3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Batata frita", "Onion Ring", "" });
-            comboBox3.Location = new Point(175, 168);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(149, 25);
-            comboBox3.TabIndex = 23;
-            comboBox3.Text = "Acompanhamentos";
+            cbAcompanhamento.BackColor = SystemColors.ScrollBar;
+            cbAcompanhamento.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            cbAcompanhamento.FormattingEnabled = true;
+            cbAcompanhamento.Items.AddRange(new object[] { "Batata frita", "Onion Ring", "" });
+            cbAcompanhamento.Location = new Point(175, 168);
+            cbAcompanhamento.Name = "cbAcompanhamento";
+            cbAcompanhamento.Size = new Size(149, 25);
+            cbAcompanhamento.TabIndex = 23;
+            cbAcompanhamento.Text = "Acompanhamentos";
             // 
-            // comboBox2
+            // cbMesa
             // 
-            comboBox2.BackColor = SystemColors.ScrollBar;
-            comboBox2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Smash onios", "Smash Melt duplo", "Bomba de chedar", "Smash Tasty ", "Smash Original Duplo ", "Smash Onions Duplo", "Googlebig", "Whatsauce ( X-Salada )", "Facebacon ( X-Bacon )", "Pcq ( X-burguer )", "Burger Tik Crock " });
-            comboBox2.Location = new Point(57, 168);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(94, 25);
-            comboBox2.TabIndex = 22;
-            comboBox2.Text = "Lanches";
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.ScrollBar;
-            comboBox1.ForeColor = SystemColors.WindowFrame;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(394, 87);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(77, 23);
-            comboBox1.TabIndex = 21;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Silver;
-            button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button3.Location = new Point(281, 245);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 38);
-            button3.TabIndex = 20;
-            button3.Text = "Cartão";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Silver;
-            button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button2.Location = new Point(170, 245);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 38);
-            button2.TabIndex = 19;
-            button2.Text = "Pix";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Silver;
-            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button1.Location = new Point(63, 245);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 38);
-            button1.TabIndex = 18;
-            button1.Text = "Dinheiro";
-            button1.UseVisualStyleBackColor = false;
+            cbMesa.BackColor = SystemColors.ScrollBar;
+            cbMesa.ForeColor = SystemColors.WindowFrame;
+            cbMesa.FormattingEnabled = true;
+            cbMesa.Location = new Point(394, 87);
+            cbMesa.Name = "cbMesa";
+            cbMesa.Size = new Size(77, 23);
+            cbMesa.TabIndex = 21;
             // 
             // label4
             // 
@@ -208,14 +165,15 @@
             panel1.Size = new Size(771, 51);
             panel1.TabIndex = 27;
             // 
-            // listBox1
+            // ltbPedido
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(481, 151);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(268, 364);
-            listBox1.TabIndex = 28;
+            ltbPedido.FormattingEnabled = true;
+            ltbPedido.ItemHeight = 15;
+            ltbPedido.Location = new Point(481, 151);
+            ltbPedido.Name = "ltbPedido";
+            ltbPedido.Size = new Size(268, 364);
+            ltbPedido.TabIndex = 28;
+            ltbPedido.SelectedIndexChanged += ltbPedido_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -227,12 +185,12 @@
             label6.TabIndex = 16;
             label6.Text = "Pedido";
             // 
-            // textBox2
+            // txtObservacoes
             // 
-            textBox2.Location = new Point(25, 332);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(394, 23);
-            textBox2.TabIndex = 29;
+            txtObservacoes.Location = new Point(25, 332);
+            txtObservacoes.Name = "txtObservacoes";
+            txtObservacoes.Size = new Size(394, 23);
+            txtObservacoes.TabIndex = 29;
             // 
             // label7
             // 
@@ -264,35 +222,91 @@
             label9.TabIndex = 30;
             label9.Text = "R$";
             // 
-            // label10
+            // lblTotalNvPedido
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Symbol", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(230, 389);
-            label10.Name = "label10";
-            label10.Size = new Size(62, 30);
-            label10.TabIndex = 30;
-            label10.Text = "00,00";
+            lblTotalNvPedido.AutoSize = true;
+            lblTotalNvPedido.Font = new Font("Segoe UI Symbol", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalNvPedido.Location = new Point(230, 389);
+            lblTotalNvPedido.Name = "lblTotalNvPedido";
+            lblTotalNvPedido.Size = new Size(62, 30);
+            lblTotalNvPedido.TabIndex = 30;
+            lblTotalNvPedido.Text = "00,00";
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.ScrollBar;
+            comboBox1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(25, 170);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(134, 25);
+            comboBox1.TabIndex = 31;
+            comboBox1.Text = "Lanche";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(13, 37);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(94, 19);
+            radioButton1.TabIndex = 32;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(234, 37);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(94, 19);
+            radioButton2.TabIndex = 32;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "radioButton1";
+            radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(114, 37);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(94, 19);
+            radioButton3.TabIndex = 32;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "radioButton1";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(radioButton3);
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Location = new Point(25, 242);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(426, 78);
+            groupBox1.TabIndex = 33;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // NovoPedidoUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label10);
+            Controls.Add(groupBox1);
+            Controls.Add(comboBox1);
+            Controls.Add(lblTotalNvPedido);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(textBox2);
-            Controls.Add(listBox1);
+            Controls.Add(txtObservacoes);
+            Controls.Add(ltbPedido);
             Controls.Add(panel1);
-            Controls.Add(button4);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox4);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnSalvarPedido);
+            Controls.Add(txtNomeCliente);
+            Controls.Add(cbBebidas);
+            Controls.Add(cbAcompanhamento);
+            Controls.Add(cbMesa);
             Controls.Add(label7);
             Controls.Add(label4);
             Controls.Add(label6);
@@ -301,35 +315,40 @@
             Controls.Add(label1);
             Name = "NovoPedidoUC";
             Size = new Size(771, 551);
+            Load += NovoPedidoUC_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button4;
-        private TextBox textBox1;
-        private ComboBox comboBox4;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnSalvarPedido;
+        private TextBox txtNomeCliente;
+        private ComboBox cbBebidas;
+        private ComboBox cbAcompanhamento;
+        private ComboBox cbLanches;
+        private ComboBox cbMesa;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
         private Label label5;
         private Panel panel1;
-        private ListBox listBox1;
+        private ListBox ltbPedido;
         private Label label6;
-        private TextBox textBox2;
+        private TextBox txtObservacoes;
         private Label label7;
         private Label label8;
         private Label label9;
-        private Label label10;
+        private Label lblTotalNvPedido;
+        private ComboBox comboBox1;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private GroupBox groupBox1;
     }
 }

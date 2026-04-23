@@ -1,3 +1,4 @@
+using MySql.Data.MySqlClient;
 namespace Tela_Inicial
 {
     public partial class Form1 : Form
@@ -38,5 +39,7 @@ namespace Tela_Inicial
             PedidosFinalizadosUC.Dock = DockStyle.Fill;
             pnl_NvPedido.Controls.Add(PedidosFinalizadosUC);
         }
+
+
     }
 }

@@ -32,15 +32,7 @@
             panel1 = new Panel();
             label1 = new Label();
             panel3 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
             pictureBox1 = new PictureBox();
-            panel11 = new Panel();
-            label7 = new Label();
-            panel9 = new Panel();
-            label5 = new Label();
-            panel10 = new Panel();
-            label6 = new Label();
             panel8 = new Panel();
             label4 = new Label();
             panel7 = new Panel();
@@ -48,8 +40,9 @@
             panel4 = new Panel();
             pnl_NvPedido = new Panel();
             panel6 = new Panel();
+            btnEditarPedidos = new Button();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvListadePedidos = new DataGridView();
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -58,14 +51,11 @@
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel11.SuspendLayout();
-            panel9.SuspendLayout();
-            panel10.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListadePedidos).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -91,12 +81,7 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.ControlLight;
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label8);
             panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(panel11);
-            panel3.Controls.Add(panel9);
-            panel3.Controls.Add(panel10);
             panel3.Controls.Add(panel8);
             panel3.Controls.Add(panel7);
             panel3.Location = new Point(-3, 0);
@@ -104,93 +89,15 @@
             panel3.Size = new Size(214, 721);
             panel3.TabIndex = 2;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 17.25F, FontStyle.Bold);
-            label9.ForeColor = Color.Green;
-            label9.Location = new Point(118, 62);
-            label9.Name = "label9";
-            label9.Size = new Size(75, 31);
-            label9.TabIndex = 0;
-            label9.Text = "Roots";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 17.25F, FontStyle.Bold);
-            label8.Location = new Point(93, 34);
-            label8.Name = "label8";
-            label8.Size = new Size(45, 31);
-            label8.TabIndex = 0;
-            label8.Text = "Bit";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(6, 29);
+            pictureBox1.Location = new Point(23, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(79, 72);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(175, 103);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // panel11
-            // 
-            panel11.BackColor = SystemColors.HighlightText;
-            panel11.Controls.Add(label7);
-            panel11.Location = new Point(3, 621);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(211, 68);
-            panel11.TabIndex = 1;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label7.Location = new Point(47, 24);
-            label7.Name = "label7";
-            label7.Size = new Size(114, 17);
-            label7.TabIndex = 0;
-            label7.Text = "CONFIGURAÇÕES";
-            // 
-            // panel9
-            // 
-            panel9.BackColor = SystemColors.HighlightText;
-            panel9.Controls.Add(label5);
-            panel9.Location = new Point(3, 334);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(211, 68);
-            panel9.TabIndex = 1;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label5.Location = new Point(61, 24);
-            label5.Name = "label5";
-            label5.Size = new Size(85, 17);
-            label5.TabIndex = 0;
-            label5.Text = "FINANCEIRO";
-            // 
-            // panel10
-            // 
-            panel10.BackColor = SystemColors.HighlightText;
-            panel10.Controls.Add(label6);
-            panel10.Location = new Point(3, 260);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(211, 68);
-            panel10.TabIndex = 2;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label6.Location = new Point(71, 25);
-            label6.Name = "label6";
-            label6.Size = new Size(66, 17);
-            label6.TabIndex = 0;
-            label6.Text = "ESTOQUE";
             // 
             // panel8
             // 
@@ -250,12 +157,22 @@
             // panel6
             // 
             panel6.BackColor = SystemColors.ControlLight;
+            panel6.Controls.Add(btnEditarPedidos);
             panel6.Controls.Add(label2);
-            panel6.Controls.Add(dataGridView1);
+            panel6.Controls.Add(dgvListadePedidos);
             panel6.Location = new Point(1083, 55);
             panel6.Name = "panel6";
             panel6.Size = new Size(389, 660);
             panel6.TabIndex = 1;
+            // 
+            // btnEditarPedidos
+            // 
+            btnEditarPedidos.Location = new Point(117, 598);
+            btnEditarPedidos.Name = "btnEditarPedidos";
+            btnEditarPedidos.Size = new Size(180, 36);
+            btnEditarPedidos.TabIndex = 3;
+            btnEditarPedidos.Text = "Editar Pedido";
+            btnEditarPedidos.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -267,14 +184,14 @@
             label2.TabIndex = 2;
             label2.Text = "Lista de Pedidos";
             // 
-            // dataGridView1
+            // dgvListadePedidos
             // 
-            dataGridView1.BackgroundColor = SystemColors.InactiveBorder;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 57);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(367, 577);
-            dataGridView1.TabIndex = 2;
+            dgvListadePedidos.BackgroundColor = SystemColors.InactiveBorder;
+            dgvListadePedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListadePedidos.Location = new Point(10, 57);
+            dgvListadePedidos.Name = "dgvListadePedidos";
+            dgvListadePedidos.Size = new Size(367, 535);
+            dgvListadePedidos.TabIndex = 2;
             // 
             // button1
             // 
@@ -358,14 +275,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
@@ -373,7 +283,7 @@
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListadePedidos).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -387,7 +297,7 @@
         private Panel pnl_NvPedido;
         private Panel panel6;
         private Label label2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvListadePedidos;
         private Button button1;
         private Button button2;
         private Button button4;
@@ -395,16 +305,9 @@
         private Panel panel2;
         private Label label3;
         private Panel panel7;
-        private Panel panel9;
-        private Label label5;
-        private Panel panel10;
-        private Label label6;
         private Panel panel8;
         private Label label4;
-        private Panel panel11;
-        private Label label7;
         private PictureBox pictureBox1;
-        private Label label9;
-        private Label label8;
+        private Button btnEditarPedidos;
     }
 }

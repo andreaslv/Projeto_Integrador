@@ -37,6 +37,7 @@
             txtSenha = new TextBox();
             txtLogin = new TextBox();
             pictureBox1 = new PictureBox();
+            btnFechar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(btnFechar);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnEntrar);
             panel1.Controls.Add(label1);
@@ -51,9 +53,9 @@
             panel1.Controls.Add(txtSenha);
             panel1.Controls.Add(txtLogin);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(191, -4);
+            panel1.Location = new Point(191, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(372, 543);
+            panel1.Size = new Size(372, 540);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -124,6 +126,20 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // btnFechar
+            // 
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFechar.ForeColor = SystemColors.ButtonHighlight;
+            btnFechar.Location = new Point(332, 3);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(37, 32);
+            btnFechar.TabIndex = 4;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += button2_Click;
+            // 
             // telaLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -151,5 +167,8 @@
         private TextBox txtSenha;
         private Label label2;
         private Button btnEntrar;
+        private Button button1;
+        private Label label3;
+        private Button btnFechar;
     }
 }

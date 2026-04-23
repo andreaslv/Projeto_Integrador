@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvPedidosProntos = new DataGridView();
             Pedido = new DataGridViewTextBoxColumn();
             Horario = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             Observação = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnEntregarPedido = new Button();
+            btnVoltaPreparo = new Button();
+            btnCancelarPedido = new Button();
             panel1 = new Panel();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidosProntos).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPedidosProntos
             // 
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Pedido, Horario, Status, Observação });
-            dataGridView1.Location = new Point(52, 85);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(660, 328);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvPedidosProntos.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvPedidosProntos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidosProntos.Columns.AddRange(new DataGridViewColumn[] { Pedido, Horario, Status, Observação });
+            dgvPedidosProntos.Location = new Point(52, 85);
+            dgvPedidosProntos.Name = "dgvPedidosProntos";
+            dgvPedidosProntos.Size = new Size(660, 328);
+            dgvPedidosProntos.TabIndex = 1;
+            dgvPedidosProntos.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Pedido
             // 
@@ -76,39 +76,39 @@
             Observação.Name = "Observação";
             Observação.Width = 250;
             // 
-            // button1
+            // btnEntregarPedido
             // 
-            button1.BackColor = SystemColors.ActiveBorder;
-            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(52, 458);
-            button1.Name = "button1";
-            button1.Size = new Size(155, 38);
-            button1.TabIndex = 2;
-            button1.Text = "Entregar pedido";
-            button1.UseVisualStyleBackColor = false;
+            btnEntregarPedido.BackColor = SystemColors.ActiveBorder;
+            btnEntregarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnEntregarPedido.ForeColor = SystemColors.ActiveCaptionText;
+            btnEntregarPedido.Location = new Point(52, 458);
+            btnEntregarPedido.Name = "btnEntregarPedido";
+            btnEntregarPedido.Size = new Size(155, 38);
+            btnEntregarPedido.TabIndex = 2;
+            btnEntregarPedido.Text = "Entregar pedido";
+            btnEntregarPedido.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnVoltaPreparo
             // 
-            button2.BackColor = SystemColors.ActiveBorder;
-            button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button2.Location = new Point(291, 458);
-            button2.Name = "button2";
-            button2.Size = new Size(168, 38);
-            button2.TabIndex = 3;
-            button2.Text = "Voltar para o preparo";
-            button2.UseVisualStyleBackColor = false;
+            btnVoltaPreparo.BackColor = SystemColors.ActiveBorder;
+            btnVoltaPreparo.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnVoltaPreparo.Location = new Point(291, 458);
+            btnVoltaPreparo.Name = "btnVoltaPreparo";
+            btnVoltaPreparo.Size = new Size(168, 38);
+            btnVoltaPreparo.TabIndex = 3;
+            btnVoltaPreparo.Text = "Voltar para o preparo";
+            btnVoltaPreparo.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCancelarPedido
             // 
-            button3.BackColor = SystemColors.ActiveBorder;
-            button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button3.Location = new Point(536, 458);
-            button3.Name = "button3";
-            button3.Size = new Size(158, 38);
-            button3.TabIndex = 4;
-            button3.Text = "Cancelar pedido";
-            button3.UseVisualStyleBackColor = false;
+            btnCancelarPedido.BackColor = SystemColors.ActiveBorder;
+            btnCancelarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnCancelarPedido.Location = new Point(536, 458);
+            btnCancelarPedido.Name = "btnCancelarPedido";
+            btnCancelarPedido.Size = new Size(158, 38);
+            btnCancelarPedido.TabIndex = 4;
+            btnCancelarPedido.Text = "Cancelar pedido";
+            btnCancelarPedido.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -133,23 +133,23 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnCancelarPedido);
+            Controls.Add(btnVoltaPreparo);
+            Controls.Add(btnEntregarPedido);
+            Controls.Add(dgvPedidosProntos);
             Name = "PedidosProntosUC";
             Size = new Size(771, 551);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidosProntos).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private DataGridView dgvPedidosProntos;
+        private Button btnEntregarPedido;
+        private Button btnVoltaPreparo;
+        private Button btnCancelarPedido;
         private Panel panel1;
         private Label label2;
         private DataGridViewTextBoxColumn Pedido;
