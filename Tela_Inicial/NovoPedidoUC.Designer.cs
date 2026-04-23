@@ -43,9 +43,6 @@
             label6 = new Label();
             txtObservacoes = new TextBox();
             label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            lblTotalNvPedido = new Label();
             comboBox1 = new ComboBox();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -202,36 +199,6 @@
             label7.TabIndex = 17;
             label7.Text = "Observações:";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Symbol", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(131, 389);
-            label8.Name = "label8";
-            label8.Size = new Size(70, 30);
-            label8.TabIndex = 30;
-            label8.Text = "Total:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Symbol", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(196, 389);
-            label9.Name = "label9";
-            label9.Size = new Size(37, 30);
-            label9.TabIndex = 30;
-            label9.Text = "R$";
-            // 
-            // lblTotalNvPedido
-            // 
-            lblTotalNvPedido.AutoSize = true;
-            lblTotalNvPedido.Font = new Font("Segoe UI Symbol", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalNvPedido.Location = new Point(230, 389);
-            lblTotalNvPedido.Name = "lblTotalNvPedido";
-            lblTotalNvPedido.Size = new Size(62, 30);
-            lblTotalNvPedido.TabIndex = 30;
-            lblTotalNvPedido.Text = "00,00";
-            // 
             // comboBox1
             // 
             comboBox1.BackColor = SystemColors.ScrollBar;
@@ -296,9 +263,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(groupBox1);
             Controls.Add(comboBox1);
-            Controls.Add(lblTotalNvPedido);
-            Controls.Add(label9);
-            Controls.Add(label8);
             Controls.Add(txtObservacoes);
             Controls.Add(ltbPedido);
             Controls.Add(panel1);
@@ -342,9 +306,6 @@
         private Label label6;
         private TextBox txtObservacoes;
         private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label lblTotalNvPedido;
         private ComboBox comboBox1;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
