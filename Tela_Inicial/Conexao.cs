@@ -17,13 +17,6 @@ namespace Tela_Inicial
         {
             return new MySqlConnection(conectar);
         }
-
-        public static MySqlConnection Abrir()
-        {
-            MySqlConnection con = new MySqlConnection(conectar);
-            con.Open();
-            return con;
-        }
     }
 }
 

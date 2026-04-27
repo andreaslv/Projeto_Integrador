@@ -139,6 +139,7 @@
             Controls.Add(dgvPedidosProntos);
             Name = "PedidosProntosUC";
             Size = new Size(771, 551);
+            Load += PedidosProntosUC_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPedidosProntos).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

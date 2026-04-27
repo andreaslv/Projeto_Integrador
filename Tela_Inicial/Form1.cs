@@ -14,6 +14,7 @@ namespace Tela_Inicial
             EmPreparoUC EmPreparoUC = new EmPreparoUC();
             EmPreparoUC.Dock = DockStyle.Fill;
             pnl_NvPedido.Controls.Add(EmPreparoUC);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,6 +39,11 @@ namespace Tela_Inicial
             PedidosFinalizadosUC PedidosFinalizadosUC = new PedidosFinalizadosUC();
             PedidosFinalizadosUC.Dock = DockStyle.Fill;
             pnl_NvPedido.Controls.Add(PedidosFinalizadosUC);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

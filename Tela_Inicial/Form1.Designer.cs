@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            button5 = new Button();
             label1 = new Label();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
@@ -40,9 +41,6 @@
             panel4 = new Panel();
             pnl_NvPedido = new Panel();
             panel6 = new Panel();
-            btnEditarPedidos = new Button();
-            label2 = new Label();
-            dgvListadePedidos = new DataGridView();
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -54,19 +52,31 @@
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel4.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvListadePedidos).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-3, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1475, 56);
             panel1.TabIndex = 0;
+            // 
+            // button5
+            // 
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button5.Location = new Point(1426, 5);
+            button5.Name = "button5";
+            button5.Size = new Size(42, 37);
+            button5.TabIndex = 1;
+            button5.Text = "X";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label1
             // 
@@ -157,41 +167,10 @@
             // panel6
             // 
             panel6.BackColor = SystemColors.ControlLight;
-            panel6.Controls.Add(btnEditarPedidos);
-            panel6.Controls.Add(label2);
-            panel6.Controls.Add(dgvListadePedidos);
             panel6.Location = new Point(1083, 55);
             panel6.Name = "panel6";
             panel6.Size = new Size(389, 660);
             panel6.TabIndex = 1;
-            // 
-            // btnEditarPedidos
-            // 
-            btnEditarPedidos.Location = new Point(117, 598);
-            btnEditarPedidos.Name = "btnEditarPedidos";
-            btnEditarPedidos.Size = new Size(180, 36);
-            btnEditarPedidos.TabIndex = 3;
-            btnEditarPedidos.Text = "Editar Pedido";
-            btnEditarPedidos.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(10, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(198, 32);
-            label2.TabIndex = 2;
-            label2.Text = "Lista de Pedidos";
-            // 
-            // dgvListadePedidos
-            // 
-            dgvListadePedidos.BackgroundColor = SystemColors.InactiveBorder;
-            dgvListadePedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListadePedidos.Location = new Point(10, 57);
-            dgvListadePedidos.Name = "dgvListadePedidos";
-            dgvListadePedidos.Size = new Size(367, 535);
-            dgvListadePedidos.TabIndex = 2;
             // 
             // button1
             // 
@@ -281,9 +260,6 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel4.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvListadePedidos).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -296,8 +272,6 @@
         private Label label1;
         private Panel pnl_NvPedido;
         private Panel panel6;
-        private Label label2;
-        private DataGridView dgvListadePedidos;
         private Button button1;
         private Button button2;
         private Button button4;
@@ -308,6 +282,6 @@
         private Panel panel8;
         private Label label4;
         private PictureBox pictureBox1;
-        private Button btnEditarPedidos;
+        private Button button5;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,85 @@ namespace Tela_Inicial
 
         private void label6_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvEmPreparo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void CarregarUsuarios()
+        {
+            string conectar = "server=localhost; database=bdthebuurger; Uid=root; password=;";
+
+            string sql = "SELECT id_pedido, itens, mesa FROM pedidos";
+
+            try
+            {
+                MySqlConnection con = new MySqlConnection(conectar);
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+
+                    dgvEmPreparo.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+
+        private void EmPreparoUC_Load(object sender, EventArgs e)
+        {
+            CarregarUsuarios();
+        }
+
+        private void btnMarcarPronto_Click(object sender, EventArgs e)
+        {
+
+            if (dgvEmPreparo.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um pedido!");
+                return;
+            }
+
+            // Pegar o ID do pedido selecionado
+            int idPedido = Convert.ToInt32(
+                dgvEmPreparo.SelectedRows[0].Cells["id_pedido"].Value
+            );
+
+            string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
+
+            string sql = "UPDATE pedidos SET status = 'Pronto' WHERE id_pedido = @id";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conectar))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idPedido);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Pedido marcado como PRONTO ✅");
+
+                // 🔄 Atualiza o DataGridView
+                CarregarUsuarios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+
 
         }
     }

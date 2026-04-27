@@ -31,10 +31,6 @@
             panel1 = new Panel();
             label1 = new Label();
             dgvEmPreparo = new DataGridView();
-            Pedidos = new DataGridViewTextBoxColumn();
-            Itens_do_Pedido = new DataGridViewTextBoxColumn();
-            Tempo_em_preparo = new DataGridViewTextBoxColumn();
-            Observações = new DataGridViewTextBoxColumn();
             btnMarcarPronto = new Button();
             btnCancelarPedido = new Button();
             panel1.SuspendLayout();
@@ -63,35 +59,11 @@
             // 
             dgvEmPreparo.BackgroundColor = SystemColors.MenuBar;
             dgvEmPreparo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmPreparo.Columns.AddRange(new DataGridViewColumn[] { Pedidos, Itens_do_Pedido, Tempo_em_preparo, Observações });
             dgvEmPreparo.Location = new Point(19, 57);
             dgvEmPreparo.Name = "dgvEmPreparo";
             dgvEmPreparo.Size = new Size(733, 388);
             dgvEmPreparo.TabIndex = 1;
-            // 
-            // Pedidos
-            // 
-            Pedidos.HeaderText = "Pedidos";
-            Pedidos.Name = "Pedidos";
-            Pedidos.Width = 110;
-            // 
-            // Itens_do_Pedido
-            // 
-            Itens_do_Pedido.HeaderText = "Itens_do_Pedido";
-            Itens_do_Pedido.Name = "Itens_do_Pedido";
-            Itens_do_Pedido.Width = 200;
-            // 
-            // Tempo_em_preparo
-            // 
-            Tempo_em_preparo.HeaderText = "Tempo_em_preparo";
-            Tempo_em_preparo.Name = "Tempo_em_preparo";
-            Tempo_em_preparo.Width = 180;
-            // 
-            // Observações
-            // 
-            Observações.HeaderText = "Observações";
-            Observações.Name = "Observações";
-            Observações.Width = 200;
+            dgvEmPreparo.CellContentClick += dgvEmPreparo_CellContentClick;
             // 
             // btnMarcarPronto
             // 
@@ -101,6 +73,7 @@
             btnMarcarPronto.TabIndex = 2;
             btnMarcarPronto.Text = "Marcar como Pronto";
             btnMarcarPronto.UseVisualStyleBackColor = true;
+            btnMarcarPronto.Click += btnMarcarPronto_Click;
             // 
             // btnCancelarPedido
             // 
@@ -122,6 +95,7 @@
             Controls.Add(panel1);
             Name = "EmPreparoUC";
             Size = new Size(771, 551);
+            Load += EmPreparoUC_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmPreparo).EndInit();
@@ -135,9 +109,5 @@
         private DataGridView dgvEmPreparo;
         private Button btnMarcarPronto;
         private Button btnCancelarPedido;
-        private DataGridViewTextBoxColumn Pedidos;
-        private DataGridViewTextBoxColumn Itens_do_Pedido;
-        private DataGridViewTextBoxColumn Tempo_em_preparo;
-        private DataGridViewTextBoxColumn Observações;
     }
 }

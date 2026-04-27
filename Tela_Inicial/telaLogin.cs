@@ -26,7 +26,7 @@ namespace Tela_Inicial
             {
                 try {  con.Open();
 
-                    string query = "SELECT * FROM tbusuarios WHERE nome_usuario = @nome_usuario AND senha=@senha";
+                    string query = "SELECT * FROM usuarios WHERE nome_usuario = @nome_usuario AND senha=@senha";
 
                     MySqlCommand cmd = new MySqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@nome_usuario", txtLogin.Text);

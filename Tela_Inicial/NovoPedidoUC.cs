@@ -31,87 +31,79 @@ namespace Tela_Inicial
 
         public void CarregarProdutosPorCategoria()
         {
-            string Lanches = comboBox1.Text;
-            string Acompanhamentos = cbAcompanhamento.Text;
-            string Bebidas = cbBebidas.Text;
 
-            MySqlConnection con = Conexao.Abrir();
-            {
-                string sql = "SELECT categoria FROM produtos";
-
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@lanche", Lanches);
-                cmd.Parameters.AddWithValue("@Acompanhamento", Acompanhamentos);
-                cmd.Parameters.AddWithValue("@Bebida", Bebidas);
-
-                cmd.ExecuteNonQuery();
-            }
         }
 
         private void NovoPedidoUC_Load(object sender, EventArgs e)
         {
-            CarregarProdutos();
         }
 
         public void CarregarProdutos()
         {
 
-            MySqlConnection con = Conexao.Abrir();
-
-            string sql = "SELECT nome, categoria FROM tbprodutos WHERE ativo = 1";
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-            comboBox1.Items.Clear();
-            cbAcompanhamento.Items.Clear();
-            cbBebidas.Items.Clear();
-
-            while (dr.Read())
-            {
-                string nomeProduto = dr["nome"]?.ToString() ?? "";
-                string categoria = dr["categoria"]?.ToString() ?? "";
-
-                if (categoria == "Lanche")
-                    comboBox1.Items.Add(nomeProduto);
-                else if (categoria == "Acompanhamento")
-                    cbAcompanhamento.Items.Add(nomeProduto);
-                else if (categoria == "Bebida")
-                    cbBebidas.Items.Add(nomeProduto);
-            }
-
-            dr.Close();
-            con.Close();
 
         }
 
         private void CarregarMesas()
         {
-            MySqlConnection con = Conexao.Abrir();
 
-            string sql = "SELECT id_mesa, numero_mesa FROM tbmesas WHERE status = 'Livre'";
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-            cbMesa.Items.Clear();
-
-            while (dr.Read())
-            {
-                int idMesa = Convert.ToInt32(dr["id_mesa"]);
-                string numeroMesa = dr["numero_mesa"]?.ToString() ?? "";
-
-            }
-
-
-            dr.Close();
-            con.Close();
-
-            cbMesa.DisplayMember = "Descricao";
-            cbMesa.ValueMember = "IdMesa";
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void btnSalvarPedido_Click(object sender, EventArgs e)
+        {
+            string nomeDoCliente, lanches, acompanhamentos, bebidas, formaPagamento, observacoes;
+            int Mesa = Convert.ToInt32(cbMesa.Text);
+
+            // Armazenar dados:
+            nomeDoCliente = txtNomeCliente.Text;
+            lanches = comboBox1.Text;
+            acompanhamentos = cbAcompanhamento.Text;
+            bebidas = cbBebidas.Text;
+            observacoes = txtObservacoes.Text;
+
+            formaPagamento = "";
+            if (rbDinheiro.Checked)
+                formaPagamento = "Dinheiro";
+            else if (rbCartao.Checked)
+                formaPagamento = "Cartão";
+            else if (rbPix.Checked)
+                formaPagamento = "Pix";
+
+
+            // Itens do pedido
+            string itens = $"{comboBox1.Text}, {cbAcompanhamento.Text}, {cbBebidas.Text}";
+
+
+            MySqlConnection conn = Conexao.Connection();
+
+            try
+            {
+                conn.Open();
+
+                string sql = @"INSERT INTO pedidos (nome_cliente, mesa, itens, observacoes, forma_pagamento, status, data_hora)
+    VALUES (@nomeDoCliente, @Mesa, @itens, @observacoes, @formaPagamento, @status, @Data)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@nomeDoCliente", txtNomeCliente.Text);
+                cmd.Parameters.AddWithValue("@Mesa", cbMesa.Text);
+                cmd.Parameters.AddWithValue("@itens", itens);
+                cmd.Parameters.AddWithValue("@observacoes", txtObservacoes.Text);
+                cmd.Parameters.AddWithValue("@formaPagamento", formaPagamento);
+                cmd.Parameters.AddWithValue("@status", "EmPreparo");
+                cmd.Parameters.AddWithValue("@Data", DateTime.Now);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Pedido salvo com sucesso!");
+            }
+            catch (Exception ex) { MessageBox.Show("Erro: " + ex.Message); }
+        }
+
+
     }
 }
+
