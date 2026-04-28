@@ -47,15 +47,49 @@ namespace Tela_Inicial
             }
 
         }
-        public void AtualizarTela()
+        private void PedidosProntosUC_Load(object sender, EventArgs e)
         {
             CarregarPedidosProntos();
         }
 
-
-        private void PedidosProntosUC_Load(object sender, EventArgs e)
+        private void btnEntregarPedido_Click(object sender, EventArgs e)
         {
-        }
+            if (dgvPedidosProntos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um pedido!");
+                return;
+            }
 
+            int idPedido = Convert.ToInt32(
+                dgvPedidosProntos.SelectedRows[0].Cells["id_pedido"].Value
+            );
+
+            string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conectar))
+                {
+                    con.Open();
+
+                    string sql = "UPDATE pedidos SET status = 'Finalizado' WHERE id_pedido = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idPedido);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Pedido FINALIZADO!");
+
+                // Atualiza a tela
+                CarregarPedidosProntos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
     }
 }

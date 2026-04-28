@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             dgvPedidosProntos = new DataGridView();
-            Pedido = new DataGridViewTextBoxColumn();
-            Horario = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            Observação = new DataGridViewTextBoxColumn();
             btnEntregarPedido = new Button();
             btnVoltaPreparo = new Button();
             btnCancelarPedido = new Button();
@@ -46,35 +42,11 @@
             // 
             dgvPedidosProntos.BackgroundColor = SystemColors.ButtonHighlight;
             dgvPedidosProntos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPedidosProntos.Columns.AddRange(new DataGridViewColumn[] { Pedido, Horario, Status, Observação });
             dgvPedidosProntos.Location = new Point(52, 85);
             dgvPedidosProntos.Name = "dgvPedidosProntos";
             dgvPedidosProntos.Size = new Size(660, 328);
             dgvPedidosProntos.TabIndex = 1;
             dgvPedidosProntos.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Pedido
-            // 
-            Pedido.HeaderText = "Pedido";
-            Pedido.Name = "Pedido";
-            Pedido.Width = 120;
-            // 
-            // Horario
-            // 
-            Horario.HeaderText = "Horário";
-            Horario.Name = "Horario";
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.Name = "Status";
-            Status.Width = 150;
-            // 
-            // Observação
-            // 
-            Observação.HeaderText = "Observação";
-            Observação.Name = "Observação";
-            Observação.Width = 250;
             // 
             // btnEntregarPedido
             // 
@@ -87,6 +59,7 @@
             btnEntregarPedido.TabIndex = 2;
             btnEntregarPedido.Text = "Entregar pedido";
             btnEntregarPedido.UseVisualStyleBackColor = false;
+            btnEntregarPedido.Click += btnEntregarPedido_Click;
             // 
             // btnVoltaPreparo
             // 
@@ -153,9 +126,5 @@
         private Button btnCancelarPedido;
         private Panel panel1;
         private Label label2;
-        private DataGridViewTextBoxColumn Pedido;
-        private DataGridViewTextBoxColumn Horario;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn Observação;
     }
 }

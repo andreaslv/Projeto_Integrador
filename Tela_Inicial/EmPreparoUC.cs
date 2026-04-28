@@ -33,7 +33,7 @@ namespace Tela_Inicial
         {
             string conectar = "server=localhost; database=bdthebuurger; Uid=root; password=;";
 
-            string sql = "SELECT id_pedido, itens, mesa FROM pedidos";
+            string sql = "SELECT id_pedido, itens, mesa FROM pedidos WHERE status = 'EmPreparo'";
 
             try
             {

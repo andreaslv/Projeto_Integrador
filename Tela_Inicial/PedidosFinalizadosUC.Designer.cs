@@ -33,11 +33,6 @@
             cbData = new ComboBox();
             label2 = new Label();
             dgvPedidosFinalizados = new DataGridView();
-            Pedidos = new DataGridViewTextBoxColumn();
-            Valor = new DataGridViewTextBoxColumn();
-            Forma_de_pagamento = new DataGridViewTextBoxColumn();
-            Horario = new DataGridViewTextBoxColumn();
-            Observação = new DataGridViewTextBoxColumn();
             btnDetalhesPedido = new Button();
             panel1 = new Panel();
             label5 = new Label();
@@ -86,39 +81,10 @@
             // 
             dgvPedidosFinalizados.BackgroundColor = SystemColors.ButtonHighlight;
             dgvPedidosFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPedidosFinalizados.Columns.AddRange(new DataGridViewColumn[] { Pedidos, Valor, Forma_de_pagamento, Horario, Observação });
             dgvPedidosFinalizados.Location = new Point(32, 106);
             dgvPedidosFinalizados.Name = "dgvPedidosFinalizados";
             dgvPedidosFinalizados.Size = new Size(702, 318);
             dgvPedidosFinalizados.TabIndex = 2;
-            // 
-            // Pedidos
-            // 
-            Pedidos.HeaderText = "Pedidos";
-            Pedidos.Name = "Pedidos";
-            Pedidos.Width = 110;
-            // 
-            // Valor
-            // 
-            Valor.HeaderText = "Valor";
-            Valor.Name = "Valor";
-            // 
-            // Forma_de_pagamento
-            // 
-            Forma_de_pagamento.HeaderText = "Forma_de_pagamento";
-            Forma_de_pagamento.Name = "Forma_de_pagamento";
-            Forma_de_pagamento.Width = 150;
-            // 
-            // Horario
-            // 
-            Horario.HeaderText = "Horário";
-            Horario.Name = "Horario";
-            // 
-            // Observação
-            // 
-            Observação.HeaderText = "Observação";
-            Observação.Name = "Observação";
-            Observação.Width = 210;
             // 
             // btnDetalhesPedido
             // 
@@ -238,6 +204,7 @@
             Controls.Add(label1);
             Name = "PedidosFinalizadosUC";
             Size = new Size(771, 551);
+            Load += PedidosFinalizadosUC_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPedidosFinalizados).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -260,11 +227,6 @@
         private Label label6;
         private Label lblNumeroPedidos;
         private Label lblValorTotalDia;
-        private DataGridViewTextBoxColumn Pedidos;
-        private DataGridViewTextBoxColumn Valor;
-        private DataGridViewTextBoxColumn Forma_de_pagamento;
-        private DataGridViewTextBoxColumn Horario;
-        private DataGridViewTextBoxColumn Observação;
         private Button btnPesquisar;
     }
 }

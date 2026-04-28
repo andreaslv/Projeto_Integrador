@@ -11,12 +11,7 @@ namespace Tela_Inicial
     {
         public class Produto
         {
-            public int IdProduto { get; set; }
-            public string Nome { get; set; }
-            public string Categoria { get; set; }
-            public decimal Preco { get; set; }
-            public TimeSpan TempoPreparoEstimado { get; set; }
-            public bool Ativo { get; set; }
+ 
         }
 
 
