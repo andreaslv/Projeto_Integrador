@@ -85,15 +85,15 @@ namespace Tela_Inicial
             {
                 conn.Open();
 
-                string sql = @"INSERT INTO pedidos (nome_cliente, mesa, itens, observacoes, forma_pagamento, status, data_hora)
-    VALUES (@nomeDoCliente, @Mesa, @itens, @observacoes, @formaPagamento, @status, @Data)";
+                string sql = @"INSERT INTO pedidos (nome_cliente, mesa, itens, observacoes, forma_pagamento, data_hora, status) VALUES (@nomeDoCliente, 
+                @Mesa, @itens, @observacoes, @formaPagamento, @Data, 'Em Preparo')";
+                
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@nomeDoCliente", txtNomeCliente.Text);
                 cmd.Parameters.AddWithValue("@Mesa", cbMesa.Text);
                 cmd.Parameters.AddWithValue("@itens", itens);
                 cmd.Parameters.AddWithValue("@observacoes", txtObservacoes.Text);
                 cmd.Parameters.AddWithValue("@formaPagamento", formaPagamento);
-                cmd.Parameters.AddWithValue("@status", "EmPreparo");
                 cmd.Parameters.AddWithValue("@Data", DateTime.Now);
 
                 cmd.ExecuteNonQuery();

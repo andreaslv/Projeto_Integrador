@@ -83,6 +83,7 @@
             btnCancelarPedido.TabIndex = 2;
             btnCancelarPedido.Text = "Cancelar Pedido";
             btnCancelarPedido.UseVisualStyleBackColor = true;
+            btnCancelarPedido.Click += btnCancelarPedido_Click;
             // 
             // EmPreparoUC
             // 

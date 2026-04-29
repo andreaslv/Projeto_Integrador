@@ -28,7 +28,7 @@ namespace Tela_Inicial
 
             string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
 
-            string sql = @"SELECT id_pedido, itens, mesa FROM pedidos WHERE status = 'Pronto'";
+            string sql = @"SELECT id_pedido, data_hora, itens, observacoes, nome_cliente, mesa FROM pedidos WHERE status = 'Pronto'";
 
             try
             {
@@ -39,6 +39,8 @@ namespace Tela_Inicial
                     da.Fill(dt);
 
                     dgvPedidosProntos.DataSource = dt;
+                    dgvPedidosProntos.Columns["id_pedido"].Visible = false;
+
                 }
             }
             catch (Exception ex)
@@ -90,6 +92,97 @@ namespace Tela_Inicial
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+        }
+
+        private void btnCancelarPedido_Click(object sender, EventArgs e)
+        {
+            if (dgvPedidosProntos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um pedido!");
+                return;
+            }
+
+            int idPedido = Convert.ToInt32(
+                dgvPedidosProntos.SelectedRows[0].Cells["id_pedido"].Value
+            );
+
+            string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conectar))
+                {
+                    con.Open();
+
+                    string sql = "UPDATE pedidos SET status = 'Cancelado' WHERE id_pedido = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idPedido);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Pedido CANCELADO!");
+
+                // 🔥 Atualiza a tela
+                CarregarPedidosProntos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+
+        private void btnVoltaPreparo_Click(object sender, EventArgs e)
+        {
+            if(dgvPedidosProntos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um pedido!");
+                return;
+            }
+
+            DialogResult confirmacao = MessageBox.Show(
+                "Deseja voltar este pedido para o PREPARO?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirmacao != DialogResult.Yes)
+                return;
+
+            int idPedido = Convert.ToInt32(
+                dgvPedidosProntos.SelectedRows[0].Cells["id_pedido"].Value
+            );
+
+            string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
+
+            string sql = "UPDATE pedidos SET status = 'Em Preparo' WHERE id_pedido = @id";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conectar))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idPedido);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Pedido voltou para PREPARO 🔄");
+
+                // Atualiza a lista de pedidos prontos
+                CarregarPedidosProntos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+
         }
     }
 }

@@ -71,6 +71,7 @@
             btnVoltaPreparo.TabIndex = 3;
             btnVoltaPreparo.Text = "Voltar para o preparo";
             btnVoltaPreparo.UseVisualStyleBackColor = false;
+            btnVoltaPreparo.Click += btnVoltaPreparo_Click;
             // 
             // btnCancelarPedido
             // 
@@ -82,6 +83,7 @@
             btnCancelarPedido.TabIndex = 4;
             btnCancelarPedido.Text = "Cancelar pedido";
             btnCancelarPedido.UseVisualStyleBackColor = false;
+            btnCancelarPedido.Click += btnCancelarPedido_Click;
             // 
             // panel1
             // 

@@ -33,7 +33,8 @@ namespace Tela_Inicial
         {
             string conectar = "server=localhost; database=bdthebuurger; Uid=root; password=;";
 
-            string sql = "SELECT id_pedido, itens, mesa FROM pedidos WHERE status = 'EmPreparo'";
+            string sql = @"SELECT id_pedido, data_hora, itens, observacoes, nome_cliente, mesa FROM pedidos WHERE status = 'Em Preparo'";
+
 
             try
             {
@@ -45,6 +46,7 @@ namespace Tela_Inicial
                     da.Fill(dt);
 
                     dgvEmPreparo.DataSource = dt;
+                    dgvEmPreparo.Columns["id_pedido"].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -101,5 +103,61 @@ namespace Tela_Inicial
 
 
         }
+
+        private void btnCancelarPedido_Click(object sender, EventArgs e)
+        {
+            if (dgvEmPreparo.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um pedido!");
+                return;
+            }
+
+
+
+            int idPedido = Convert.ToInt32(
+            dgvEmPreparo.SelectedRows[0].Cells["id_pedido"].Value
+            );
+
+
+
+            string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
+
+
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conectar))
+                {
+                    con.Open();
+
+
+
+                    string sql = "UPDATE pedidos SET status = 'Cancelado' WHERE id_pedido = @id";
+
+
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idPedido);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+
+
+                MessageBox.Show("Pedido CANCELADO!");
+
+
+
+                // Atualiza a tela
+                CarregarUsuarios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+
+
     }
 }
