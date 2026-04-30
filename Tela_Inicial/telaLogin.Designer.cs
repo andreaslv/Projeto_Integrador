@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaLogin));
             panel1 = new Panel();
-            label2 = new Label();
+            btnFechar = new Button();
             btnEntrar = new Button();
             label1 = new Label();
             Login = new Label();
             txtSenha = new TextBox();
             txtLogin = new TextBox();
             pictureBox1 = new PictureBox();
-            btnFechar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,7 +45,6 @@
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
             panel1.Controls.Add(btnFechar);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(btnEntrar);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(Login);
@@ -58,23 +56,26 @@
             panel1.Size = new Size(372, 540);
             panel1.TabIndex = 0;
             // 
-            // label2
+            // btnFechar
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(113, 397);
-            label2.Name = "label2";
-            label2.Size = new Size(129, 17);
-            label2.TabIndex = 1;
-            label2.Text = "Esqueci minha senha";
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFechar.ForeColor = SystemColors.ButtonHighlight;
+            btnFechar.Location = new Point(332, 3);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(37, 32);
+            btnFechar.TabIndex = 4;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += button2_Click;
             // 
             // btnEntrar
             // 
             btnEntrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntrar.Location = new Point(141, 457);
+            btnEntrar.Location = new Point(129, 406);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(75, 31);
+            btnEntrar.Size = new Size(129, 41);
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
@@ -107,14 +108,14 @@
             // 
             txtSenha.Location = new Point(113, 316);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(145, 23);
+            txtSenha.Size = new Size(180, 23);
             txtSenha.TabIndex = 3;
             // 
             // txtLogin
             // 
             txtLogin.Location = new Point(113, 245);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(145, 23);
+            txtLogin.Size = new Size(180, 23);
             txtLogin.TabIndex = 2;
             // 
             // pictureBox1
@@ -125,20 +126,6 @@
             pictureBox1.Size = new Size(150, 149);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // btnFechar
-            // 
-            btnFechar.FlatAppearance.BorderSize = 0;
-            btnFechar.FlatStyle = FlatStyle.Flat;
-            btnFechar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnFechar.ForeColor = SystemColors.ButtonHighlight;
-            btnFechar.Location = new Point(332, 3);
-            btnFechar.Name = "btnFechar";
-            btnFechar.Size = new Size(37, 32);
-            btnFechar.TabIndex = 4;
-            btnFechar.Text = "X";
-            btnFechar.UseVisualStyleBackColor = true;
-            btnFechar.Click += button2_Click;
             // 
             // telaLogin
             // 
@@ -165,7 +152,6 @@
         private Label label1;
         private Label Login;
         private TextBox txtSenha;
-        private Label label2;
         private Button btnEntrar;
         private Button button1;
         private Label label3;

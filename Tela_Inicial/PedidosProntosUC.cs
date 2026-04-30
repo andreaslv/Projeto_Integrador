@@ -41,6 +41,9 @@ namespace Tela_Inicial
                     dgvPedidosProntos.DataSource = dt;
                     dgvPedidosProntos.Columns["id_pedido"].Visible = false;
 
+                    dgvPedidosProntos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
                 }
             }
             catch (Exception ex)

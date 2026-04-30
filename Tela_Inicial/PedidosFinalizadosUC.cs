@@ -33,13 +33,16 @@ namespace Tela_Inicial
                 {
                     con.Open();
 
-                    string sql = "SELECT id_pedido, valorTotal, formaPagamento, dataHora, observacoes FROM pedidos WHERE status = 'Finalizado'";
+                    string sql = "SELECT data_hora, itens, nome_cliente, mesa, forma_pagamento, valorTotal FROM pedidos WHERE status = 'Finalizado'";
 
                     MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
                     dgvPedidosFinalizados.DataSource = dt;
+                    dgvPedidosFinalizados.Columns["id_pedido"].Visible = false;
+
+                    dgvPedidosFinalizados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
             catch (Exception ex)

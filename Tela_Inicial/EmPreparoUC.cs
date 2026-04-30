@@ -47,6 +47,8 @@ namespace Tela_Inicial
 
                     dgvEmPreparo.DataSource = dt;
                     dgvEmPreparo.Columns["id_pedido"].Visible = false;
+
+                    dgvEmPreparo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
             catch (Exception ex)
@@ -116,6 +118,8 @@ namespace Tela_Inicial
 
             int idPedido = Convert.ToInt32(
             dgvEmPreparo.SelectedRows[0].Cells["id_pedido"].Value
+
+
             );
 
 

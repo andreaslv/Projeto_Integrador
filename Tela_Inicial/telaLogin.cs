@@ -20,6 +20,21 @@ namespace Tela_Inicial
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+
+            if(string.IsNullOrWhiteSpace(txtLogin.Text))
+    {
+                MessageBox.Show("Por favor, preencha o campo de usuário.");
+                txtLogin.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSenha.Text))
+            {
+                MessageBox.Show("Por favor, preencha o campo de senha.");
+                txtSenha.Focus();
+                return;
+            }
+
             string conexao = "server=localhost; database=bdthebuurger; user=root; password=;";
 
             using (MySqlConnection con = new MySqlConnection(conexao))
