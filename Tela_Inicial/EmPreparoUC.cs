@@ -25,7 +25,9 @@ namespace Tela_Inicial
 
         private void dgvEmPreparo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            dgvEmPreparo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEmPreparo.MultiSelect = false;
+            dgvEmPreparo.ReadOnly = true;
         }
 
 

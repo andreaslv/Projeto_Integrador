@@ -20,7 +20,9 @@ namespace Tela_Inicial
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            dgvPedidosProntos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPedidosProntos.MultiSelect = false;
+            dgvPedidosProntos.ReadOnly = true;
         }
 
         public void CarregarPedidosProntos()
@@ -28,7 +30,7 @@ namespace Tela_Inicial
 
             string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
 
-            string sql = @"SELECT id_pedido, data_hora, itens, observacoes, nome_cliente, mesa FROM pedidos WHERE status = 'Pronto'";
+            string sql = "SELECT id_pedido, data_hora, itens, observacoes, nome_cliente, mesa FROM pedidos WHERE status = 'Pronto'";
 
             try
             {
@@ -99,6 +101,7 @@ namespace Tela_Inicial
 
         private void btnCancelarPedido_Click(object sender, EventArgs e)
         {
+
             if (dgvPedidosProntos.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione um pedido!");
@@ -137,6 +140,8 @@ namespace Tela_Inicial
             }
         }
 
+        
+
         private void btnVoltaPreparo_Click(object sender, EventArgs e)
         {
             if(dgvPedidosProntos.SelectedRows.Count == 0)
@@ -158,6 +163,7 @@ namespace Tela_Inicial
             int idPedido = Convert.ToInt32(
                 dgvPedidosProntos.SelectedRows[0].Cells["id_pedido"].Value
             );
+
 
             string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
 

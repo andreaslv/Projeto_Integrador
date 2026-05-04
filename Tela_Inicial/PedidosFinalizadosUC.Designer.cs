@@ -85,6 +85,7 @@
             dgvPedidosFinalizados.Name = "dgvPedidosFinalizados";
             dgvPedidosFinalizados.Size = new Size(702, 318);
             dgvPedidosFinalizados.TabIndex = 2;
+            dgvPedidosFinalizados.CellContentClick += dgvPedidosFinalizados_CellContentClick;
             // 
             // btnDetalhesPedido
             // 

@@ -33,7 +33,7 @@ namespace Tela_Inicial
                 {
                     con.Open();
 
-                    string sql = "SELECT data_hora, itens, nome_cliente, mesa, forma_pagamento, valorTotal FROM pedidos WHERE status = 'Finalizado'";
+                    string sql = "SELECT id_pedido, data_hora, itens, nome_cliente, mesa, forma_pagamento, valorTotal FROM pedidos WHERE status = 'Finalizado'";
 
                     MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
                     DataTable dt = new DataTable();
@@ -54,6 +54,13 @@ namespace Tela_Inicial
         private void PedidosFinalizadosUC_Load(object sender, EventArgs e)
         {
             CarregarPedidosFinalizados();
+        }
+
+        private void dgvPedidosFinalizados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvPedidosFinalizados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPedidosFinalizados.MultiSelect = false;
+            dgvPedidosFinalizados.ReadOnly = true;
         }
     }
 }
