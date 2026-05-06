@@ -16,13 +16,24 @@ namespace Tela_Inicial
         public telaLogin()
         {
             InitializeComponent();
+            // Esconder senha
+            txtSenha.UseSystemPasswordChar = true;
+
+            // Enter aciona o botão Entrar
+            this.AcceptButton = btnEntrar;
+
+            // Ordem do TAB
+            txtLogin.TabIndex = 0;
+            txtSenha.TabIndex = 1;
+            btnEntrar.TabIndex = 2;
+
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            if(string.IsNullOrWhiteSpace(txtLogin.Text))
-    {
+            if (string.IsNullOrWhiteSpace(txtLogin.Text))
+            {
                 MessageBox.Show("Por favor, preencha o campo de usuário.");
                 txtLogin.Focus();
                 return;
@@ -39,7 +50,9 @@ namespace Tela_Inicial
 
             using (MySqlConnection con = new MySqlConnection(conexao))
             {
-                try {  con.Open();
+                try
+                {
+                    con.Open();
 
                     string query = "SELECT * FROM usuarios WHERE nome_usuario = @nome_usuario AND senha=@senha";
 
@@ -70,12 +83,7 @@ namespace Tela_Inicial
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnFecharL_Click(object sender, EventArgs e)
         {
             this.Close();
         }

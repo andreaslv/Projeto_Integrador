@@ -42,9 +42,9 @@
             // 
             dgvPedidosProntos.BackgroundColor = SystemColors.ButtonHighlight;
             dgvPedidosProntos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPedidosProntos.Location = new Point(52, 85);
+            dgvPedidosProntos.Location = new Point(20, 57);
             dgvPedidosProntos.Name = "dgvPedidosProntos";
-            dgvPedidosProntos.Size = new Size(660, 328);
+            dgvPedidosProntos.Size = new Size(733, 388);
             dgvPedidosProntos.TabIndex = 1;
             dgvPedidosProntos.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -53,7 +53,7 @@
             btnEntregarPedido.BackColor = SystemColors.ActiveBorder;
             btnEntregarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnEntregarPedido.ForeColor = SystemColors.ActiveCaptionText;
-            btnEntregarPedido.Location = new Point(52, 458);
+            btnEntregarPedido.Location = new Point(52, 486);
             btnEntregarPedido.Name = "btnEntregarPedido";
             btnEntregarPedido.Size = new Size(155, 38);
             btnEntregarPedido.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             btnVoltaPreparo.BackColor = SystemColors.ActiveBorder;
             btnVoltaPreparo.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            btnVoltaPreparo.Location = new Point(291, 458);
+            btnVoltaPreparo.Location = new Point(291, 486);
             btnVoltaPreparo.Name = "btnVoltaPreparo";
             btnVoltaPreparo.Size = new Size(168, 38);
             btnVoltaPreparo.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             btnCancelarPedido.BackColor = SystemColors.ActiveBorder;
             btnCancelarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            btnCancelarPedido.Location = new Point(536, 458);
+            btnCancelarPedido.Location = new Point(536, 486);
             btnCancelarPedido.Name = "btnCancelarPedido";
             btnCancelarPedido.Size = new Size(158, 38);
             btnCancelarPedido.TabIndex = 4;

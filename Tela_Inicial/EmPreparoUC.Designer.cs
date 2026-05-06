@@ -33,6 +33,7 @@
             dgvEmPreparo = new DataGridView();
             btnMarcarPronto = new Button();
             btnCancelarPedido = new Button();
+            btnEditarPedido = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmPreparo).BeginInit();
             SuspendLayout();
@@ -67,9 +68,9 @@
             // 
             // btnMarcarPronto
             // 
-            btnMarcarPronto.Location = new Point(124, 483);
+            btnMarcarPronto.Location = new Point(32, 482);
             btnMarcarPronto.Name = "btnMarcarPronto";
-            btnMarcarPronto.Size = new Size(250, 38);
+            btnMarcarPronto.Size = new Size(213, 38);
             btnMarcarPronto.TabIndex = 2;
             btnMarcarPronto.Text = "Marcar como Pronto";
             btnMarcarPronto.UseVisualStyleBackColor = true;
@@ -77,19 +78,30 @@
             // 
             // btnCancelarPedido
             // 
-            btnCancelarPedido.Location = new Point(399, 483);
+            btnCancelarPedido.Location = new Point(528, 482);
             btnCancelarPedido.Name = "btnCancelarPedido";
-            btnCancelarPedido.Size = new Size(249, 38);
+            btnCancelarPedido.Size = new Size(213, 38);
             btnCancelarPedido.TabIndex = 2;
             btnCancelarPedido.Text = "Cancelar Pedido";
             btnCancelarPedido.UseVisualStyleBackColor = true;
             btnCancelarPedido.Click += btnCancelarPedido_Click;
+            // 
+            // btnEditarPedido
+            // 
+            btnEditarPedido.Location = new Point(280, 482);
+            btnEditarPedido.Name = "btnEditarPedido";
+            btnEditarPedido.Size = new Size(213, 38);
+            btnEditarPedido.TabIndex = 3;
+            btnEditarPedido.Text = "Editar Pedido";
+            btnEditarPedido.UseVisualStyleBackColor = true;
+            btnEditarPedido.Click += button1_Click;
             // 
             // EmPreparoUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            Controls.Add(btnEditarPedido);
             Controls.Add(btnCancelarPedido);
             Controls.Add(btnMarcarPronto);
             Controls.Add(dgvEmPreparo);
@@ -110,5 +122,6 @@
         private DataGridView dgvEmPreparo;
         private Button btnMarcarPronto;
         private Button btnCancelarPedido;
+        private Button btnEditarPedido;
     }
 }

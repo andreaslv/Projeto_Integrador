@@ -124,11 +124,7 @@ namespace Tela_Inicial
 
             );
 
-
-
             string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
-
-
 
             try
             {
@@ -164,6 +160,38 @@ namespace Tela_Inicial
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            if(dgvEmPreparo.SelectedRows.Count == 0)
+    {
+                MessageBox.Show("Selecione um pedido para editar.",
+                                "Atenção",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
+            int idPedido = Convert.ToInt32(
+                dgvEmPreparo.SelectedRows[0].Cells["id_pedido"].Value
+            );
+
+            AbrirTelaEditarPedido(idPedido);
+
+
+        }
+
+        private void AbrirTelaEditarPedido(int idPedido)
+        {
+            NovoPedidoUC editar = new NovoPedidoUC();
+            editar.CarregarPedido(idPedido);
+
+            this.Controls.Clear();
+            this.Controls.Add(editar);
+
+            editar.Dock = DockStyle.Fill; // importante para ajustar à tela
+        }
 
     }
 }

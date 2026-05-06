@@ -65,6 +65,7 @@
             cbData.Name = "cbData";
             cbData.Size = new Size(167, 23);
             cbData.TabIndex = 1;
+            cbData.SelectedIndexChanged += cbData_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -81,9 +82,9 @@
             // 
             dgvPedidosFinalizados.BackgroundColor = SystemColors.ButtonHighlight;
             dgvPedidosFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPedidosFinalizados.Location = new Point(32, 106);
+            dgvPedidosFinalizados.Location = new Point(17, 110);
             dgvPedidosFinalizados.Name = "dgvPedidosFinalizados";
-            dgvPedidosFinalizados.Size = new Size(702, 318);
+            dgvPedidosFinalizados.Size = new Size(733, 318);
             dgvPedidosFinalizados.TabIndex = 2;
             dgvPedidosFinalizados.CellContentClick += dgvPedidosFinalizados_CellContentClick;
             // 
@@ -120,6 +121,8 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(214, 23);
             txtBuscar.TabIndex = 29;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            txtBuscar.KeyDown += txtBuscar_KeyDown;
             // 
             // label3
             // 
@@ -185,6 +188,7 @@
             btnPesquisar.Size = new Size(45, 25);
             btnPesquisar.TabIndex = 30;
             btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // PedidosFinalizadosUC
             // 
