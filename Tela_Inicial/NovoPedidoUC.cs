@@ -227,12 +227,12 @@ namespace Tela_Inicial
                 }
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@nomeDoCliente", txtNomeCliente.Text);
-                cmd.Parameters.AddWithValue("@Mesa", cbMesa.Text);
+                cmd.Parameters.AddWithValue("@nome", txtNomeCliente.Text);
+                cmd.Parameters.AddWithValue("@mesa", cbMesa.Text);
                 cmd.Parameters.AddWithValue("@itens", itens);
-                cmd.Parameters.AddWithValue("@observacoes", txtObservacoes.Text);
-                cmd.Parameters.AddWithValue("@formaPagamento", formaPagamento);
-                cmd.Parameters.AddWithValue("@Data", DateTime.Now);
+                cmd.Parameters.AddWithValue("@obs", txtObservacoes.Text);
+                cmd.Parameters.AddWithValue("@pagamento", formaPagamento);
+                cmd.Parameters.AddWithValue("@data", DateTime.Now);
 
                 if (_idPedido > 0)
                 {

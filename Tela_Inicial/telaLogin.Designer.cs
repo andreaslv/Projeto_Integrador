@@ -45,7 +45,7 @@
             btnEntrar.FlatAppearance.BorderSize = 0;
             btnEntrar.FlatStyle = FlatStyle.Flat;
             btnEntrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntrar.Location = new Point(322, 578);
+            btnEntrar.Location = new Point(322, 551);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(129, 41);
             btnEntrar.TabIndex = 1;
@@ -58,7 +58,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(242, 492);
+            label1.Location = new Point(242, 465);
             label1.Name = "label1";
             label1.Size = new Size(61, 21);
             label1.TabIndex = 1;
@@ -70,7 +70,7 @@
             Login.BackColor = SystemColors.ActiveCaptionText;
             Login.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Login.ForeColor = SystemColors.ButtonHighlight;
-            Login.Location = new Point(242, 374);
+            Login.Location = new Point(242, 347);
             Login.Name = "Login";
             Login.Size = new Size(57, 21);
             Login.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             txtSenha.BackColor = Color.FromArgb(30, 30, 30);
             txtSenha.ForeColor = Color.White;
-            txtSenha.Location = new Point(242, 516);
+            txtSenha.Location = new Point(242, 489);
             txtSenha.Multiline = true;
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(274, 30);
@@ -90,7 +90,7 @@
             // 
             txtLogin.BackColor = Color.FromArgb(30, 30, 30);
             txtLogin.ForeColor = Color.White;
-            txtLogin.Location = new Point(242, 398);
+            txtLogin.Location = new Point(242, 371);
             txtLogin.Multiline = true;
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(274, 33);
@@ -99,9 +99,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(131, -71);
+            pictureBox1.Location = new Point(143, -36);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(483, 384);
+            pictureBox1.Size = new Size(483, 380);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;

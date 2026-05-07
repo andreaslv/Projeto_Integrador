@@ -162,10 +162,8 @@ namespace Tela_Inicial
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
             if(dgvEmPreparo.SelectedRows.Count == 0)
-    {
+            {
                 MessageBox.Show("Selecione um pedido para editar.",
                                 "Atenção",
                                 MessageBoxButtons.OK,
@@ -178,8 +176,6 @@ namespace Tela_Inicial
             );
 
             AbrirTelaEditarPedido(idPedido);
-
-
         }
 
         private void AbrirTelaEditarPedido(int idPedido)

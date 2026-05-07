@@ -54,7 +54,6 @@ namespace Tela_Inicial
         private void PedidosFinalizadosUC_Load(object sender, EventArgs e)
         {
             CarregarPedidosFinalizados();
-            CarregarDatas();
         }
 
         private void dgvPedidosFinalizados_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -67,7 +66,7 @@ namespace Tela_Inicial
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             string busca = txtBuscar.Text.Trim();
-            string dataSelecionada = cbData.SelectedItem?.ToString();
+            string dataTexto = txtData.Text.Trim();
 
             string sql = @"SELECT id_pedido, data_hora, itens, nome_cliente, mesa,
             forma_pagamento, valorTotal FROM pedidos WHERE status = 'Finalizado'";
@@ -82,11 +81,23 @@ namespace Tela_Inicial
             }
 
             // 🔹 Filtro pela data
-            if (!string.IsNullOrEmpty(dataSelecionada) && dataSelecionada != "Todas")
+            if (!string.IsNullOrWhiteSpace(dataTexto))
             {
-                DateTime data = DateTime.ParseExact(dataSelecionada, "dd/MM/yyyy", null);
-                sql += " AND DATE(data_hora) = @data";
-                cmd.Parameters.AddWithValue("@data", data);
+                if (DateTime.TryParseExact(
+                    dataTexto,
+                    "dd/MM/yyyy",
+                    null,
+                    System.Globalization.DateTimeStyles.None,
+                    out DateTime data))
+                {
+                    sql += " AND DATE(data_hora) = @data";
+                    cmd.Parameters.AddWithValue("@data", data);
+                }
+                else
+                {
+                    MessageBox.Show("Data inválida. Use dd/MM/yyyy.");
+                    return;
+                }
             }
 
             try
@@ -112,7 +123,7 @@ namespace Tela_Inicial
 
         }
 
-        private void CarregarDatas()
+        /*private void CarregarDatas()
         {
             string sql = @"
         SELECT DISTINCT DATE(data_hora) AS dataPedido
@@ -151,21 +162,22 @@ namespace Tela_Inicial
 
         private void cbData_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbData.SelectedItem.ToString() == "Todas")
-            {
-                CarregarPedidosFinalizados();
-            }
-            else
-            {
-                DateTime dataSelecionada = DateTime.ParseExact(
-                    cbData.SelectedItem.ToString(),
-                    "dd/MM/yyyy",
-                    null
-                );
+            
+             if (cbData.SelectedItem.ToString() == "Todas")
+             {
+                 CarregarPedidosFinalizados();
+             }
+             else
+             {
+                 DateTime dataSelecionada = DateTime.ParseExact(
+                     cbData.SelectedItem.ToString(),
+                     "dd/MM/yyyy",
+                     null
+                 );
 
-                CarregarPedidosPorData(dataSelecionada);
-            }
-        }
+                 CarregarPedidosPorData(dataSelecionada);
+             }
+        }*/
 
         private void CarregarPedidosPorData(DateTime data)
         {
@@ -213,14 +225,86 @@ namespace Tela_Inicial
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            /*
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
                 cbData.SelectedIndex = 0; // "Todas"
                 CarregarPedidosFinalizados();
-            }
+            }*/
         }
 
+        private void txtData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) &&
+                    e.KeyChar != '/' &&
+                    !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtData_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtData.Text))
+            {
+                CarregarPedidosFinalizados();
+                return;
+            }
+
+            if (DateTime.TryParseExact(
+                txtData.Text,
+                "dd/MM/yyyy",
+                null,
+                System.Globalization.DateTimeStyles.None,
+                out DateTime dataSelecionada))
+            {
+                CarregarPedidosPorData(dataSelecionada);
+            }
+            /*
+            else
+            {
+                MessageBox.Show("Data inválida. Use dd/MM/yyyy.");
+                txtData.Clear();
+                txtData.Focus();
+            }
+            */
+
+        }
+
+        private void txtData_Leave(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtData.Text))
+            {
+                CarregarPedidosFinalizados();
+                return;
+            }
+
+            if (DateTime.TryParseExact(
+                txtData.Text,
+                "dd/MM/yyyy",
+                null,
+                System.Globalization.DateTimeStyles.None,
+                out DateTime dataSelecionada))
+            {
+                CarregarPedidosPorData(dataSelecionada);
+            }
+            /*
+            else
+            {
+                MessageBox.Show("Data inválida. Use dd/MM/yyyy.");
+                txtData.Clear();
+                txtData.Focus();
+            }*/
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

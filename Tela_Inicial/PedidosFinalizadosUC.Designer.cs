@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosFinalizadosUC));
             label1 = new Label();
-            cbData = new ComboBox();
             label2 = new Label();
             dgvPedidosFinalizados = new DataGridView();
             btnDetalhesPedido = new Button();
@@ -43,6 +42,7 @@
             lblNumeroPedidos = new Label();
             lblValorTotalDia = new Label();
             btnPesquisar = new Button();
+            txtData = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvPedidosFinalizados).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -57,15 +57,6 @@
             label1.TabIndex = 0;
             label1.Text = "Buscar:";
             label1.Click += label1_Click;
-            // 
-            // cbData
-            // 
-            cbData.FormattingEnabled = true;
-            cbData.Location = new Point(485, 67);
-            cbData.Name = "cbData";
-            cbData.Size = new Size(167, 23);
-            cbData.TabIndex = 1;
-            cbData.SelectedIndexChanged += cbData_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -190,16 +181,27 @@
             btnPesquisar.UseVisualStyleBackColor = true;
             btnPesquisar.Click += btnPesquisar_Click;
             // 
+            // txtData
+            // 
+            txtData.Location = new Point(485, 68);
+            txtData.MaxLength = 10;
+            txtData.Name = "txtData";
+            txtData.Size = new Size(118, 23);
+            txtData.TabIndex = 31;
+            txtData.TextChanged += txtData_TextChanged;
+            txtData.KeyPress += txtData_KeyPress;
+            txtData.Leave += txtData_Leave;
+            // 
             // PedidosFinalizadosUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(txtData);
             Controls.Add(btnPesquisar);
             Controls.Add(txtBuscar);
             Controls.Add(panel1);
             Controls.Add(btnDetalhesPedido);
             Controls.Add(dgvPedidosFinalizados);
-            Controls.Add(cbData);
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(lblValorTotalDia);
@@ -220,7 +222,6 @@
         #endregion
 
         private Label label1;
-        private ComboBox cbData;
         private Label label2;
         private DataGridView dgvPedidosFinalizados;
         private Button btnDetalhesPedido;
@@ -233,5 +234,6 @@
         private Label lblNumeroPedidos;
         private Label lblValorTotalDia;
         private Button btnPesquisar;
+        private TextBox txtData;
     }
 }

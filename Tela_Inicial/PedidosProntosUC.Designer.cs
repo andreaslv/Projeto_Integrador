@@ -57,7 +57,7 @@
             btnEntregarPedido.Name = "btnEntregarPedido";
             btnEntregarPedido.Size = new Size(155, 38);
             btnEntregarPedido.TabIndex = 2;
-            btnEntregarPedido.Text = "Entregar pedido";
+            btnEntregarPedido.Text = "Finalizar";
             btnEntregarPedido.UseVisualStyleBackColor = false;
             btnEntregarPedido.Click += btnEntregarPedido_Click;
             // 
