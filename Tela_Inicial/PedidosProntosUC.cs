@@ -71,6 +71,9 @@ namespace Tela_Inicial
                 dgvPedidosProntos.SelectedRows[0].Cells["id_pedido"].Value
             );
 
+            string itens = dgvPedidosProntos.SelectedRows[0].Cells["itens"].Value.ToString();
+            decimal valorTotal = CalcularTotalPedido(itens);
+
             string conectar = "server=localhost;database=bdthebuurger;uid=root;password=;";
 
             try
@@ -79,24 +82,32 @@ namespace Tela_Inicial
                 {
                     con.Open();
 
-                    string sql = "UPDATE pedidos SET status = 'Finalizado' WHERE id_pedido = @id";
+                    string sql = @"
+                UPDATE pedidos 
+                SET status = 'Finalizado',
+                    valorTotal = @valor,
+                    data_hora = NOW()
+                WHERE id_pedido = @id
+            ";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
+                        cmd.Parameters.AddWithValue("@valor", valorTotal);
                         cmd.Parameters.AddWithValue("@id", idPedido);
                         cmd.ExecuteNonQuery();
                     }
                 }
 
-                MessageBox.Show("Pedido FINALIZADO!");
+                MessageBox.Show("Pedido FINALIZADO com sucesso!");
 
-                // Atualiza a tela
                 CarregarPedidosProntos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
+
         }
 
         private void btnCancelarPedido_Click(object sender, EventArgs e)
@@ -140,11 +151,11 @@ namespace Tela_Inicial
             }
         }
 
-        
+
 
         private void btnVoltaPreparo_Click(object sender, EventArgs e)
         {
-            if(dgvPedidosProntos.SelectedRows.Count == 0)
+            if (dgvPedidosProntos.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione um pedido!");
                 return;
@@ -191,7 +202,109 @@ namespace Tela_Inicial
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
+
+            private decimal CalcularTotalPedido(string itens)
+
+        {
+            decimal total = 0;
+
+            string[] listaItens = itens.Split(',');
+
+            foreach (string item in listaItens)
+            {
+                string nomeItem = item.Trim();
+
+                switch (nomeItem)
+                {
+                    case "Smash Tasty":
+                        total += 18.00m;
+                        break;
+
+                    case "Smash Original":
+                        total += 15.00m;
+                        break;
+
+                    case "Smash Egg":
+                        total += 17.00m;
+                        break;
+
+                    case "Frango Supremo Crocante":
+                        total += 19.00m;
+                        break;
+
+                    case "Smash Duplo Egg":
+                        total += 22.00m;
+                        break;
+
+                    case "Smash Original Duplo":
+                        total += 21.00m;
+                        break;
+
+                    case "Smash Onions Duplo":
+                        total += 23.00m;
+                        break;
+
+                    case "Batata Frita Pequena":
+                        total += 6.00m;
+                        break;
+
+                    case "Batata Frita Média":
+                        total += 8.00m;
+                        break;
+
+                    case "Batata Frita Grande":
+                        total += 10.00m;
+                        break;
+
+                    case "Onion Rings":
+                        total += 9.00m;
+                        break;
+
+                    case "Nuggets 6 unidades":
+                        total += 7.00m;
+                        break;
+
+                    case "Nuggets 10 unidades":
+                        total += 11.00m;
+                        break;
+
+                    case "Coca Cola 350ml":
+                        total += 5.00m;
+                        break;
+
+                    case "Coca Cola 600ml":
+                        total += 7.00m;
+                        break;
+
+                    case "Coca Cola Zero 350ml":
+                        total += 5.00m;
+                        break;
+
+                    case "Coca Cola Zero 600ml":
+                        total += 7.00m;
+                        break;
+
+                    case "Guaraná 350ml":
+                        total += 5.00m;
+                        break;
+
+                    case "Guaraná 600ml":
+                        total += 7.00m;
+                        break;
+
+                    case "Suco Laranja":
+                        total += 6.00m;
+                        break;
+
+                    case "Limonada":
+                        total += 5.00m;
+                        break;
+                }
+            }
+
+            return total;
+        }
+
     }
 }

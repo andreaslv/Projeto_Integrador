@@ -33,24 +33,22 @@
             button5 = new Button();
             label1 = new Label();
             panel3 = new Panel();
-            pictureBox1 = new PictureBox();
             panel4 = new Panel();
             pnl_NvPedido = new Panel();
             panel6 = new Panel();
+            panel5 = new Panel();
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
             button3 = new Button();
             panel2 = new Panel();
-            pictureBox2 = new PictureBox();
-            panel5 = new Panel();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -95,16 +93,6 @@
             panel3.Size = new Size(214, 721);
             panel3.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-55, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(327, 250);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // panel4
             // 
             panel4.BackColor = SystemColors.ControlLightLight;
@@ -131,16 +119,23 @@
             panel6.Size = new Size(389, 660);
             panel6.TabIndex = 1;
             // 
+            // panel5
+            // 
+            panel5.Location = new Point(9, 7);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(366, 636);
+            panel5.TabIndex = 0;
+            // 
             // button1
             // 
-            button1.BackColor = Color.GhostWhite;
+            button1.BackColor = Color.FromArgb(37, 99, 235);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(227, 132, 31);
-            button1.Location = new Point(265, 7);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(306, 7);
             button1.Name = "button1";
-            button1.Size = new Size(190, 39);
+            button1.Size = new Size(161, 39);
             button1.TabIndex = 2;
             button1.Text = "Novo Produto";
             button1.UseVisualStyleBackColor = false;
@@ -153,7 +148,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(628, 7);
+            button2.Location = new Point(658, 7);
             button2.Name = "button2";
             button2.Size = new Size(161, 39);
             button2.TabIndex = 2;
@@ -168,7 +163,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(795, 7);
+            button4.Location = new Point(834, 7);
             button4.Name = "button4";
             button4.Size = new Size(161, 39);
             button4.TabIndex = 2;
@@ -183,7 +178,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(461, 7);
+            button3.Location = new Point(482, 7);
             button3.Name = "button3";
             button3.Size = new Size(161, 39);
             button3.TabIndex = 2;
@@ -194,7 +189,6 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlLight;
-            panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button2);
@@ -204,22 +198,15 @@
             panel2.Size = new Size(1086, 51);
             panel2.TabIndex = 1;
             // 
-            // pictureBox2
+            // pictureBox1
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(265, 16);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 30);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(9, 7);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(366, 636);
-            panel5.TabIndex = 0;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(211, 208);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -239,11 +226,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -260,9 +246,8 @@
         private Button button4;
         private Button button3;
         private Panel panel2;
-        private PictureBox pictureBox1;
         private Button button5;
-        private PictureBox pictureBox2;
         private Panel panel5;
+        private PictureBox pictureBox1;
     }
 }

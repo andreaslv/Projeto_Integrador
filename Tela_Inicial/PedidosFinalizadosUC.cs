@@ -43,6 +43,9 @@ namespace Tela_Inicial
                     dgvPedidosFinalizados.Columns["id_pedido"].Visible = false;
 
                     dgvPedidosFinalizados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    AtualizarTotais();
+
                 }
             }
             catch (Exception ex)
@@ -213,6 +216,7 @@ namespace Tela_Inicial
                     MessageBox.Show("Erro ao filtrar pedidos: " + ex.Message);
                 }
             }
+            AtualizarTotais(data);
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -305,6 +309,53 @@ namespace Tela_Inicial
         {
 
         }
+
+        private void AtualizarTotais(DateTime? data = null)
+        {
+            string sql = @"
+        SELECT 
+            COUNT(id_pedido) AS totalPedidos,
+            COALESCE(SUM(valorTotal), 0) AS totalValor
+        FROM pedidos
+        WHERE status = 'Finalizado'
+    ";
+
+            if (data.HasValue)
+            {
+                sql += " AND DATE(data_hora) = @data";
+            }
+
+            using (MySqlConnection conn = Conexao.Connection())
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    if (data.HasValue)
+                    {
+                        cmd.Parameters.AddWithValue("@data", data.Value.Date);
+                    }
+
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        // Label: Total de pedidos
+                        lblNumeroPedidos.Text = dr["totalPedidos"].ToString();
+
+                        // Label: Total do dia (R$)
+                        decimal total = Convert.ToDecimal(dr["totalValor"]);
+                        lblValorTotalDia.Text = total.ToString("C"); // R$ formatado
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao calcular totais: " + ex.Message);
+                }
+            }
+        }
+
     }
 }
 

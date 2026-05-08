@@ -79,29 +79,32 @@
             // txtSenha
             // 
             txtSenha.BackColor = Color.FromArgb(30, 30, 30);
+            txtSenha.Font = new Font("Segoe UI", 12F);
             txtSenha.ForeColor = Color.White;
             txtSenha.Location = new Point(242, 489);
-            txtSenha.Multiline = true;
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(274, 30);
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new Size(274, 29);
             txtSenha.TabIndex = 3;
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // txtLogin
             // 
             txtLogin.BackColor = Color.FromArgb(30, 30, 30);
+            txtLogin.Font = new Font("Segoe UI", 12F);
             txtLogin.ForeColor = Color.White;
             txtLogin.Location = new Point(242, 371);
-            txtLogin.Multiline = true;
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(274, 33);
+            txtLogin.Size = new Size(274, 29);
             txtLogin.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(143, -36);
+            pictureBox1.Location = new Point(152, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(483, 380);
+            pictureBox1.Size = new Size(470, 301);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;

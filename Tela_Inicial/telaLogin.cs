@@ -87,5 +87,10 @@ namespace Tela_Inicial
         {
             this.Close();
         }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

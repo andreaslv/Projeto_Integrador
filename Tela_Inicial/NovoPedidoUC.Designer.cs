@@ -104,7 +104,7 @@
             // cbMesa
             // 
             cbMesa.BackColor = SystemColors.ScrollBar;
-            cbMesa.ForeColor = SystemColors.WindowFrame;
+            cbMesa.ForeColor = SystemColors.WindowText;
             cbMesa.FormattingEnabled = true;
             cbMesa.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
             cbMesa.Location = new Point(526, 96);

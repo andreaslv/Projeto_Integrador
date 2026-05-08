@@ -58,7 +58,7 @@
             // 
             // dgvEmPreparo
             // 
-            dgvEmPreparo.BackgroundColor = SystemColors.MenuBar;
+            dgvEmPreparo.BackgroundColor = SystemColors.ButtonHighlight;
             dgvEmPreparo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEmPreparo.Location = new Point(19, 57);
             dgvEmPreparo.Name = "dgvEmPreparo";
