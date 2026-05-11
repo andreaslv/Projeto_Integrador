@@ -33,6 +33,7 @@
             button5 = new Button();
             label1 = new Label();
             panel3 = new Panel();
+            pictureBox1 = new PictureBox();
             panel4 = new Panel();
             pnl_NvPedido = new Panel();
             panel6 = new Panel();
@@ -42,18 +43,17 @@
             button4 = new Button();
             button3 = new Button();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Gainsboro;
+            panel1.BackColor = Color.DarkOrange;
             panel1.Controls.Add(button5);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-3, 0);
@@ -93,9 +93,19 @@
             panel3.Size = new Size(214, 721);
             panel3.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(211, 208);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // panel4
             // 
-            panel4.BackColor = SystemColors.ControlLightLight;
+            panel4.BackColor = Color.FromArgb(255, 248, 240);
             panel4.Controls.Add(pnl_NvPedido);
             panel4.Location = new Point(217, 112);
             panel4.Name = "panel4";
@@ -104,7 +114,7 @@
             // 
             // pnl_NvPedido
             // 
-            pnl_NvPedido.BackColor = SystemColors.InactiveBorder;
+            pnl_NvPedido.BackColor = Color.FromArgb(255, 248, 240);
             pnl_NvPedido.Location = new Point(48, 26);
             pnl_NvPedido.Name = "pnl_NvPedido";
             pnl_NvPedido.Size = new Size(771, 551);
@@ -112,7 +122,7 @@
             // 
             // panel6
             // 
-            panel6.BackColor = SystemColors.ControlLight;
+            panel6.BackColor = Color.Bisque;
             panel6.Controls.Add(panel5);
             panel6.Location = new Point(1083, 55);
             panel6.Name = "panel6";
@@ -121,6 +131,7 @@
             // 
             // panel5
             // 
+            panel5.BackColor = Color.FromArgb(255, 248, 240);
             panel5.Location = new Point(9, 7);
             panel5.Name = "panel5";
             panel5.Size = new Size(366, 636);
@@ -188,7 +199,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ControlLight;
+            panel2.BackColor = Color.Bisque;
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button2);
@@ -197,16 +208,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1086, 51);
             panel2.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(211, 208);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -226,10 +227,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
