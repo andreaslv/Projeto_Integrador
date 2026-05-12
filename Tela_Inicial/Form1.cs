@@ -11,14 +11,30 @@ namespace Tela_Inicial
         private void button3_Click(object sender, EventArgs e)
         {
             pnl_NvPedido.Controls.Clear();
+
             EmPreparoUC EmPreparoUC = new EmPreparoUC();
+
+            // ? ASSINA O EVENTO (CORRETO)
+            EmPreparoUC.PedidoEditarSolicitado += AbrirEditarPedido;
+
             EmPreparoUC.Dock = DockStyle.Fill;
             pnl_NvPedido.Controls.Add(EmPreparoUC);
-            
         }
+
+        private void AbrirEditarPedido(int idPedido)
+        {
+            panelDetalhes.Visible = true;
+            panelDetalhes.Controls.Clear();
+            EditarPedidoUC editar = new EditarPedidoUC(idPedido);
+            editar.Dock = DockStyle.Fill;
+            panelDetalhes.Controls.Add(editar);
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LimparPainelDetalhes();
+
             pnl_NvPedido.Controls.Clear();
             PedidosProntosUC PedidosProntosUC = new PedidosProntosUC();
             PedidosProntosUC.Dock = DockStyle.Fill;
@@ -27,6 +43,9 @@ namespace Tela_Inicial
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            LimparPainelDetalhes();
+
             pnl_NvPedido.Controls.Clear();
             NovoPedidoUC NovoPedidoUC = new NovoPedidoUC();
             NovoPedidoUC.Dock = DockStyle.Fill;
@@ -35,6 +54,8 @@ namespace Tela_Inicial
 
         private void button4_Click(object sender, EventArgs e)
         {
+            LimparPainelDetalhes();
+
             pnl_NvPedido.Controls.Clear();
             PedidosFinalizadosUC PedidosFinalizadosUC = new PedidosFinalizadosUC();
             PedidosFinalizadosUC.Dock = DockStyle.Fill;
@@ -44,6 +65,12 @@ namespace Tela_Inicial
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LimparPainelDetalhes()
+        {
+            panelDetalhes.Controls.Clear();
+            panelDetalhes.Visible = false; // opcional, mas recomendado
         }
 
 

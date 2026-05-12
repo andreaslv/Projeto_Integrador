@@ -173,6 +173,7 @@
             // txtObservacoes
             // 
             txtObservacoes.Location = new Point(157, 379);
+            txtObservacoes.Multiline = true;
             txtObservacoes.Name = "txtObservacoes";
             txtObservacoes.Size = new Size(446, 23);
             txtObservacoes.TabIndex = 29;

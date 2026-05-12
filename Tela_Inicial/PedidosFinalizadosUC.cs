@@ -40,6 +40,7 @@ namespace Tela_Inicial
                     da.Fill(dt);
 
                     dgvPedidosFinalizados.DataSource = dt;
+
                     dgvPedidosFinalizados.Columns["id_pedido"].Visible = false;
 
                     dgvPedidosFinalizados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -210,6 +211,7 @@ namespace Tela_Inicial
                     da.Fill(dt);
 
                     dgvPedidosFinalizados.DataSource = dt;
+
                 }
                 catch (Exception ex)
                 {
@@ -353,8 +355,12 @@ namespace Tela_Inicial
                 {
                     MessageBox.Show("Erro ao calcular totais: " + ex.Message);
                 }
+
+
             }
         }
+
+
 
     }
 }

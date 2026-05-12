@@ -92,7 +92,8 @@ namespace Tela_Inicial
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@valor", valorTotal);
+                        //cmd.Parameters.AddWithValue("@valor", valorTotal);
+                        cmd.Parameters.Add("@valor", MySqlDbType.Decimal).Value = valorTotal;
                         cmd.Parameters.AddWithValue("@id", idPedido);
                         cmd.ExecuteNonQuery();
                     }

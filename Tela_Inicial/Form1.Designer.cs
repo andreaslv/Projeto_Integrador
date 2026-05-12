@@ -37,7 +37,7 @@
             panel4 = new Panel();
             pnl_NvPedido = new Panel();
             panel6 = new Panel();
-            panel5 = new Panel();
+            panelDetalhes = new Panel();
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -123,19 +123,19 @@
             // panel6
             // 
             panel6.BackColor = Color.Bisque;
-            panel6.Controls.Add(panel5);
+            panel6.Controls.Add(panelDetalhes);
             panel6.Location = new Point(1083, 55);
             panel6.Name = "panel6";
             panel6.Size = new Size(389, 660);
             panel6.TabIndex = 1;
             // 
-            // panel5
+            // panelDetalhes
             // 
-            panel5.BackColor = Color.FromArgb(255, 248, 240);
-            panel5.Location = new Point(9, 7);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(366, 636);
-            panel5.TabIndex = 0;
+            panelDetalhes.BackColor = Color.FromArgb(255, 248, 240);
+            panelDetalhes.Location = new Point(9, 7);
+            panelDetalhes.Name = "panelDetalhes";
+            panelDetalhes.Size = new Size(366, 636);
+            panelDetalhes.TabIndex = 0;
             // 
             // button1
             // 
@@ -248,7 +248,7 @@
         private Button button3;
         private Panel panel2;
         private Button button5;
-        private Panel panel5;
+        private Panel panelDetalhes;
         private PictureBox pictureBox1;
     }
 }

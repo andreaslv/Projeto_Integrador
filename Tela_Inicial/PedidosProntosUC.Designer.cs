@@ -50,7 +50,7 @@
             // 
             // btnEntregarPedido
             // 
-            btnEntregarPedido.BackColor = SystemColors.ActiveBorder;
+            btnEntregarPedido.BackColor = SystemColors.Control;
             btnEntregarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnEntregarPedido.ForeColor = SystemColors.ActiveCaptionText;
             btnEntregarPedido.Location = new Point(52, 486);
@@ -63,7 +63,7 @@
             // 
             // btnVoltaPreparo
             // 
-            btnVoltaPreparo.BackColor = SystemColors.ActiveBorder;
+            btnVoltaPreparo.BackColor = SystemColors.Control;
             btnVoltaPreparo.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnVoltaPreparo.Location = new Point(291, 486);
             btnVoltaPreparo.Name = "btnVoltaPreparo";
@@ -75,7 +75,7 @@
             // 
             // btnCancelarPedido
             // 
-            btnCancelarPedido.BackColor = SystemColors.ActiveBorder;
+            btnCancelarPedido.BackColor = SystemColors.Control;
             btnCancelarPedido.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnCancelarPedido.Location = new Point(536, 486);
             btnCancelarPedido.Name = "btnCancelarPedido";

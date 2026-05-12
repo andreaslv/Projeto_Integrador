@@ -13,6 +13,10 @@ namespace Tela_Inicial
 {
     public partial class EmPreparoUC : UserControl
     {
+
+        // ✅ EVENTO DENTRO DA CLASSE (CORRETO)
+        public event Action<int>? PedidoEditarSolicitado;
+
         public EmPreparoUC()
         {
             InitializeComponent();
@@ -175,10 +179,14 @@ namespace Tela_Inicial
                 dgvEmPreparo.SelectedRows[0].Cells["id_pedido"].Value
             );
 
-            AbrirTelaEditarPedido(idPedido);
+
+            // ✅ Dispara o evento
+            PedidoEditarSolicitado?.Invoke(idPedido);
+
+            // AbrirTelaEditarPedido(idPedido);
         }
 
-        private void AbrirTelaEditarPedido(int idPedido)
+        /*private void AbrirTelaEditarPedido(int idPedido)
         {
             NovoPedidoUC editar = new NovoPedidoUC();
             editar.CarregarPedido(idPedido);
@@ -187,7 +195,7 @@ namespace Tela_Inicial
             this.Controls.Add(editar);
 
             editar.Dock = DockStyle.Fill; // importante para ajustar à tela
-        }
+        }*/
 
     }
 }
