@@ -34,6 +34,8 @@
             label1 = new Label();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
+            button6 = new Button();
+            label2 = new Label();
             panel4 = new Panel();
             pnl_NvPedido = new Panel();
             panel6 = new Panel();
@@ -56,9 +58,9 @@
             panel1.BackColor = Color.DarkOrange;
             panel1.Controls.Add(button5);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(-3, 0);
+            panel1.Location = new Point(216, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1475, 56);
+            panel1.Size = new Size(1256, 56);
             panel1.TabIndex = 0;
             // 
             // button5
@@ -66,7 +68,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button5.Location = new Point(1426, 5);
+            button5.Location = new Point(1207, 4);
             button5.Name = "button5";
             button5.Size = new Size(42, 37);
             button5.TabIndex = 1;
@@ -78,7 +80,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(238, 22);
+            label1.Location = new Point(29, 21);
             label1.Name = "label1";
             label1.Size = new Size(219, 31);
             label1.TabIndex = 0;
@@ -88,9 +90,11 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(button6);
+            panel3.Controls.Add(label2);
             panel3.Location = new Point(-3, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(214, 721);
+            panel3.Size = new Size(222, 721);
             panel3.TabIndex = 2;
             // 
             // pictureBox1
@@ -98,10 +102,29 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(211, 208);
+            pictureBox1.Size = new Size(221, 208);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.White;
+            button6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Location = new Point(3, 228);
+            button6.Name = "button6";
+            button6.Size = new Size(219, 75);
+            button6.TabIndex = 2;
+            button6.Text = "Pedidos";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(62, 646);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 15);
+            label2.TabIndex = 1;
             // 
             // panel4
             // 
@@ -144,7 +167,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(306, 7);
+            button1.Location = new Point(99, 7);
             button1.Name = "button1";
             button1.Size = new Size(161, 39);
             button1.TabIndex = 2;
@@ -159,7 +182,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(658, 7);
+            button2.Location = new Point(451, 7);
             button2.Name = "button2";
             button2.Size = new Size(161, 39);
             button2.TabIndex = 2;
@@ -174,7 +197,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(834, 7);
+            button4.Location = new Point(627, 7);
             button4.Name = "button4";
             button4.Size = new Size(161, 39);
             button4.TabIndex = 2;
@@ -189,7 +212,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(482, 7);
+            button3.Location = new Point(275, 7);
             button3.Name = "button3";
             button3.Size = new Size(161, 39);
             button3.TabIndex = 2;
@@ -204,9 +227,9 @@
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(0, 55);
+            panel2.Location = new Point(216, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1086, 51);
+            panel2.Size = new Size(870, 51);
             panel2.TabIndex = 1;
             // 
             // Form1
@@ -215,11 +238,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(1470, 720);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
             Controls.Add(panel6);
             Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -227,6 +250,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -250,5 +274,7 @@
         private Button button5;
         private Panel panelDetalhes;
         private PictureBox pictureBox1;
+        private Label label2;
+        private Button button6;
     }
 }

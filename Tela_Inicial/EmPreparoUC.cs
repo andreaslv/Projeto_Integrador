@@ -52,9 +52,43 @@ namespace Tela_Inicial
                     da.Fill(dt);
 
                     dgvEmPreparo.DataSource = dt;
+
+
+                    // 🔧 ajustes mais equilibrados
+                    dgvEmPreparo.Columns["data_hora"].FillWeight = 105;
+                    dgvEmPreparo.Columns["itens"].FillWeight = 300;
+                    dgvEmPreparo.Columns["observacoes"].FillWeight = 140;
+                    dgvEmPreparo.Columns["nome_cliente"].FillWeight = 100;
+                    dgvEmPreparo.Columns["mesa"].FillWeight = 40;
+                    dgvEmPreparo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                     dgvEmPreparo.Columns["id_pedido"].Visible = false;
 
-                    dgvEmPreparo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // ✅ COLE AQUI
+
+                    foreach (DataGridViewRow row in dgvEmPreparo.Rows)
+                    {
+                        if (row.Cells["itens"].Value != null)
+                        {
+                            string texto = row.Cells["itens"].Value.ToString();
+
+                            // ✅ REMOVE preço completo (ex: " - R$ 22,00")
+                            string textoLimpo = System.Text.RegularExpressions.Regex
+                                .Replace(texto, @"\s*-\s*R\$\s*\d+,\d+", "");
+
+                            // ✅ REMOVE prefixos
+                            textoLimpo = textoLimpo.Replace("[L]", "")
+                                                   .Replace("[A]", "")
+                                                   .Replace("[B]", "");
+
+                            row.Cells["itens"].Value = textoLimpo;
+                            textoLimpo = textoLimpo.Replace("  ", " ").Trim();
+
+                        }
+                    }
+
+
                 }
             }
             catch (Exception ex)

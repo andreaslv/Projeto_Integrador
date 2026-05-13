@@ -43,6 +43,11 @@ namespace Tela_Inicial
                     dgvPedidosProntos.DataSource = dt;
                     dgvPedidosProntos.Columns["id_pedido"].Visible = false;
 
+                    dgvPedidosProntos.Columns["data_hora"].FillWeight = 105;
+                    dgvPedidosProntos.Columns["itens"].FillWeight = 300;
+                    dgvPedidosProntos.Columns["observacoes"].FillWeight = 140;
+                    dgvPedidosProntos.Columns["nome_cliente"].FillWeight = 100;
+                    dgvPedidosProntos.Columns["mesa"].FillWeight = 40;
                     dgvPedidosProntos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
 
