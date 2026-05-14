@@ -28,11 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             button5 = new Button();
             label1 = new Label();
             panel3 = new Panel();
+            pictureBox2 = new PictureBox();
+            panel7 = new Panel();
+            panel5 = new Panel();
+            lblHora = new Label();
+            lblCargo = new Label();
+            lblNomeUsuario = new Label();
+            btn_Sair = new Button();
             pictureBox1 = new PictureBox();
             button6 = new Button();
             label2 = new Label();
@@ -45,8 +53,11 @@
             button4 = new Button();
             button3 = new Button();
             panel2 = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
@@ -89,6 +100,12 @@
             // panel3
             // 
             panel3.BackColor = Color.Black;
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(panel7);
+            panel3.Controls.Add(panel5);
+            panel3.Controls.Add(lblCargo);
+            panel3.Controls.Add(lblNomeUsuario);
+            panel3.Controls.Add(btn_Sair);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(button6);
             panel3.Controls.Add(label2);
@@ -96,6 +113,82 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(222, 721);
             panel3.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(15, 589);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(51, 42);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(9, 19, 31);
+            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
+            panel7.BackgroundImageLayout = ImageLayout.Center;
+            panel7.Location = new Point(12, 682);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(99, 33);
+            panel7.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(9, 19, 31);
+            panel5.Controls.Add(lblHora);
+            panel5.Location = new Point(12, 639);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(205, 37);
+            panel5.TabIndex = 5;
+            // 
+            // lblHora
+            // 
+            lblHora.AutoSize = true;
+            lblHora.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblHora.ForeColor = Color.DarkOrange;
+            lblHora.Location = new Point(70, 7);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(72, 21);
+            lblHora.TabIndex = 4;
+            lblHora.Text = "00:00:00";
+            // 
+            // lblCargo
+            // 
+            lblCargo.AutoSize = true;
+            lblCargo.Font = new Font("Segoe UI", 11.25F);
+            lblCargo.ForeColor = SystemColors.ButtonHighlight;
+            lblCargo.Location = new Point(72, 610);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(49, 20);
+            lblCargo.TabIndex = 4;
+            lblCargo.Text = "Cargo";
+            // 
+            // lblNomeUsuario
+            // 
+            lblNomeUsuario.AutoSize = true;
+            lblNomeUsuario.Font = new Font("Segoe UI", 12F);
+            lblNomeUsuario.ForeColor = SystemColors.ButtonHighlight;
+            lblNomeUsuario.Location = new Point(72, 589);
+            lblNomeUsuario.Name = "lblNomeUsuario";
+            lblNomeUsuario.Size = new Size(111, 21);
+            lblNomeUsuario.TabIndex = 4;
+            lblNomeUsuario.Text = "Nome Usuário";
+            // 
+            // btn_Sair
+            // 
+            btn_Sair.BackColor = Color.FromArgb(9, 19, 31);
+            btn_Sair.BackgroundImage = (Image)resources.GetObject("btn_Sair.BackgroundImage");
+            btn_Sair.BackgroundImageLayout = ImageLayout.Center;
+            btn_Sair.FlatAppearance.BorderColor = Color.FromArgb(9, 19, 31);
+            btn_Sair.FlatStyle = FlatStyle.Flat;
+            btn_Sair.Location = new Point(115, 682);
+            btn_Sair.Name = "btn_Sair";
+            btn_Sair.Size = new Size(99, 33);
+            btn_Sair.TabIndex = 3;
+            btn_Sair.UseVisualStyleBackColor = false;
+            btn_Sair.Click += btn_Sair_Click;
             // 
             // pictureBox1
             // 
@@ -109,13 +202,16 @@
             // 
             // button6
             // 
-            button6.BackColor = Color.White;
+            button6.BackColor = Color.FromArgb(9, 19, 31);
+            button6.FlatAppearance.BorderColor = Color.FromArgb(9, 19, 31);
+            button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.White;
             button6.Location = new Point(3, 228);
             button6.Name = "button6";
-            button6.Size = new Size(219, 75);
+            button6.Size = new Size(216, 57);
             button6.TabIndex = 2;
-            button6.Text = "Pedidos";
+            button6.Text = "Home";
             button6.UseVisualStyleBackColor = false;
             // 
             // label2
@@ -232,6 +328,12 @@
             panel2.Size = new Size(870, 51);
             panel2.TabIndex = 1;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -247,10 +349,14 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -276,5 +382,13 @@
         private PictureBox pictureBox1;
         private Label label2;
         private Button button6;
+        private Panel panel5;
+        private Label lblCargo;
+        private Label lblNomeUsuario;
+        private Label lblHora;
+        private Button btn_Sair;
+        private Panel panel7;
+        private PictureBox pictureBox2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

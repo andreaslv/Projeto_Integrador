@@ -73,6 +73,29 @@ namespace Tela_Inicial
             panelDetalhes.Visible = false; // opcional, mas recomendado
         }
 
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            // Cole isso
+            var result = MessageBox.Show("Deseja realmente sair?", "Confirmação",
+                             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                new telaLogin().Show();
+            }
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblNomeUsuario.Text = "Felipe Monteiro";
+            lblCargo.Text = "Dono";
+
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }

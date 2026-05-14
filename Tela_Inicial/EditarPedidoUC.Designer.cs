@@ -38,7 +38,7 @@
             labelTotal = new Label();
             label10 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            btnCancelarEdit = new Button();
             cbLanche1 = new ComboBox();
             cbAcomp = new ComboBox();
             cbBebida1 = new ComboBox();
@@ -157,14 +157,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
+            // btnCancelarEdit
             // 
-            button2.Location = new Point(212, 587);
-            button2.Name = "button2";
-            button2.Size = new Size(109, 38);
-            button2.TabIndex = 8;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelarEdit.Location = new Point(212, 587);
+            btnCancelarEdit.Name = "btnCancelarEdit";
+            btnCancelarEdit.Size = new Size(109, 38);
+            btnCancelarEdit.TabIndex = 8;
+            btnCancelarEdit.Text = "Cancelar";
+            btnCancelarEdit.UseVisualStyleBackColor = true;
+            btnCancelarEdit.Click += btnCancelarEdit_Click;
             // 
             // cbLanche1
             // 
@@ -336,7 +337,7 @@
             Controls.Add(cbBebida1);
             Controls.Add(cbAcomp);
             Controls.Add(cbLanche1);
-            Controls.Add(button2);
+            Controls.Add(btnCancelarEdit);
             Controls.Add(button1);
             Controls.Add(labelTotal);
             Controls.Add(label8);
@@ -366,7 +367,7 @@
         private Label labelTotal;
         private Label label10;
         private Button button1;
-        private Button button2;
+        private Button btnCancelarEdit;
         private ComboBox cbLanche1;
         private ComboBox cbAcomp;
         private ComboBox cbBebida1;

@@ -13,7 +13,10 @@ namespace Tela_Inicial
 {
     public partial class EditarPedidoUC : UserControl
     {
+        private bool houveAlteracao = false;
         private int _idPedido;
+        private string itensOriginais = "";
+
         public EditarPedidoUC(int idPedido)
         {
             InitializeComponent();
@@ -43,7 +46,7 @@ namespace Tela_Inicial
                     if (dr.Read())
                     {
                         // ✅ ID no título
-                        lblNumPedido.Text = $"Pedido #{_idPedido}";
+                        lblNumPedido.Text = $" #{_idPedido}";
 
                         // ✅ Nome
                         lblNomeCliente1.Text = dr["nome_cliente"].ToString();
@@ -53,8 +56,35 @@ namespace Tela_Inicial
 
                         // ✅ Observações
                         txtObservacoes.Text = dr["observacoes"].ToString();
+
+
+                        // ✅ GUARDA itens originais
+                        itensOriginais = dr["itens"].ToString();
+
+                        // ✅ 🔥 AQUI entra o código 🔥
+                        listBox1.Items.Clear();
+
+
+                        string[] partes = itensOriginais.Split(new string[] { " - R$ " }, StringSplitOptions.None);
+
+                        for (int i = 0; i < partes.Length - 1; i++)
+                        {
+                            string nome = partes[i].Trim();
+                            string preco = partes[i + 1].Substring(0, partes[i + 1].IndexOf(',') != -1
+                                ? partes[i + 1].IndexOf(',')
+                                : partes[i + 1].Length);
+
+                            string item = $"{nome} - R$ {preco}";
+
+                            listBox1.Items.Add(item);
+                        }
+
+                        // ✅ Atualiza total ao carregar
+                        AtualizarTotal();
+
                     }
                 }
+                
 
             }
         }
@@ -77,6 +107,8 @@ namespace Tela_Inicial
             listBox1.Items.Add(item);
             AtualizarTotal();
 
+            houveAlteracao = true; 
+
             cbLanche1.SelectedIndex = -1;
         }
 
@@ -91,6 +123,8 @@ namespace Tela_Inicial
 
             listBox1.Items.Add(item);
             AtualizarTotal();
+
+            houveAlteracao = true; 
 
             cbAcomp.SelectedIndex = -1;
         }
@@ -107,6 +141,8 @@ namespace Tela_Inicial
 
             listBox1.Items.Add(item);
             AtualizarTotal();
+
+            houveAlteracao = true; 
 
             cbBebida1.SelectedIndex = -1;
         }
@@ -151,11 +187,17 @@ namespace Tela_Inicial
                SET itens = @itens,
                    observacoes = @obs
                WHERE id_pedido = @id";
-               
+
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                string itens = string.Join(", ", listBox1.Items.Cast<string>());
+                string itens = itensOriginais;
+
+                if (houveAlteracao && listBox1.Items.Count > 0)
+                {
+                    itens = string.Join(", ", listBox1.Items.Cast<string>());
+                }
+
 
                 cmd.Parameters.AddWithValue("@itens", itens);
                 cmd.Parameters.AddWithValue("@id", _idPedido);
@@ -163,7 +205,7 @@ namespace Tela_Inicial
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Atualizado!");
+                MessageBox.Show("Pedido atualizado com sucesso!");
             }
 
         }
@@ -175,6 +217,8 @@ namespace Tela_Inicial
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
                 AtualizarTotal();
+
+                houveAlteracao = true;
             }
         }
 
@@ -185,6 +229,8 @@ namespace Tela_Inicial
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
                 AtualizarTotal();
+
+                houveAlteracao = true;
             }
         }
 
@@ -195,6 +241,8 @@ namespace Tela_Inicial
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
                 AtualizarTotal();
+
+                houveAlteracao = true;
             }
         }
 
@@ -252,9 +300,31 @@ namespace Tela_Inicial
 
         }
 
-        
+        private void btnCancelarEdit_Click(object sender, EventArgs e)
+        {
 
+            if (houveAlteracao)
+            {
+                DialogResult resposta = MessageBox.Show(
+                    "Deseja descartar as alterações?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
 
+                if (resposta == DialogResult.No)
+                    return;
+            }
+
+            // ✅ Fecha o painel de edição
+            this.Parent.Controls.Remove(this);
+
+        }
+
+        private void txtObservacoes_TextChanged(object sender, EventArgs e)
+        {
+            houveAlteracao = true;
+        }
 
     }
 }

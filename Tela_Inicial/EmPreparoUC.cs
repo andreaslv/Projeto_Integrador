@@ -64,27 +64,22 @@ namespace Tela_Inicial
 
                     dgvEmPreparo.Columns["id_pedido"].Visible = false;
 
-
-                    // ✅ COLE AQUI
-
                     foreach (DataGridViewRow row in dgvEmPreparo.Rows)
                     {
                         if (row.Cells["itens"].Value != null)
                         {
                             string texto = row.Cells["itens"].Value.ToString();
 
-                            // ✅ REMOVE preço completo (ex: " - R$ 22,00")
                             string textoLimpo = System.Text.RegularExpressions.Regex
                                 .Replace(texto, @"\s*-\s*R\$\s*\d+,\d+", "");
 
-                            // ✅ REMOVE prefixos
                             textoLimpo = textoLimpo.Replace("[L]", "")
                                                    .Replace("[A]", "")
-                                                   .Replace("[B]", "");
+                                                   .Replace("[B]", "")
+                                                   .Replace("  ", " ")
+                                                   .Trim();
 
                             row.Cells["itens"].Value = textoLimpo;
-                            textoLimpo = textoLimpo.Replace("  ", " ").Trim();
-
                         }
                     }
 
