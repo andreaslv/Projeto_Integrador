@@ -35,7 +35,7 @@ namespace Tela_Inicial
         }
 
 
-        private void CarregarUsuarios()
+        public void CarregarUsuarios()
         {
             string conectar = "server=localhost; database=bdthebuurger; Uid=root; password=;";
 

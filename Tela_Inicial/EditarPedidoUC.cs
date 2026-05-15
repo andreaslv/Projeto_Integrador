@@ -13,6 +13,7 @@ namespace Tela_Inicial
 {
     public partial class EditarPedidoUC : UserControl
     {
+        public event Action? PedidoAtualizado;
         private bool houveAlteracao = false;
         private int _idPedido;
         private string itensOriginais = "";
@@ -33,9 +34,9 @@ namespace Tela_Inicial
                 conn.Open();
 
                 string sql = @"
-        SELECT nome_cliente, mesa, itens, observacoes
-        FROM pedidos
-        WHERE id_pedido = @id";
+                SELECT nome_cliente, mesa, itens, observacoes
+                FROM pedidos
+                WHERE id_pedido = @id";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
@@ -65,29 +66,26 @@ namespace Tela_Inicial
                         listBox1.Items.Clear();
 
 
-                        string[] partes = itensOriginais.Split(new string[] { " - R$ " }, StringSplitOptions.None);
+                        var itens = System.Text.RegularExpressions.Regex.Matches(
+                                itensOriginais,
+                                @"[^,]+- R\$ \d+,\d+"
+                            );
 
-                        for (int i = 0; i < partes.Length - 1; i++)
+                        foreach (System.Text.RegularExpressions.Match match in itens)
                         {
-                            string nome = partes[i].Trim();
-                            string preco = partes[i + 1].Substring(0, partes[i + 1].IndexOf(',') != -1
-                                ? partes[i + 1].IndexOf(',')
-                                : partes[i + 1].Length);
-
-                            string item = $"{nome} - R$ {preco}";
-
-                            listBox1.Items.Add(item);
+                            listBox1.Items.Add(match.Value.Trim());
                         }
 
-                        // ✅ Atualiza total ao carregar
                         AtualizarTotal();
-
                     }
-                }
-                
 
+
+                    // ✅ Atualiza total ao carregar
+                    //AtualizarTotal();
+                }
             }
         }
+        
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -206,6 +204,12 @@ namespace Tela_Inicial
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Pedido atualizado com sucesso!");
+
+                // ✅ DISPARA EVENTO
+                PedidoAtualizado?.Invoke();
+
+                // ✅ Fecha painel
+                this.Parent.Controls.Remove(this);
             }
 
         }

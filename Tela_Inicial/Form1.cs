@@ -3,6 +3,8 @@ namespace Tela_Inicial
 {
     public partial class Form1 : Form
     {
+
+        private EmPreparoUC emPreparoUC;
         public Form1()
         {
             InitializeComponent();
@@ -10,24 +12,45 @@ namespace Tela_Inicial
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             pnl_NvPedido.Controls.Clear();
 
-            EmPreparoUC EmPreparoUC = new EmPreparoUC();
+            emPreparoUC = new EmPreparoUC();
 
-            // ? ASSINA O EVENTO (CORRETO)
-            EmPreparoUC.PedidoEditarSolicitado += AbrirEditarPedido;
+            emPreparoUC.PedidoEditarSolicitado += AbrirEditarPedido;
 
-            EmPreparoUC.Dock = DockStyle.Fill;
-            pnl_NvPedido.Controls.Add(EmPreparoUC);
+            emPreparoUC.Dock = DockStyle.Fill;
+            pnl_NvPedido.Controls.Add(emPreparoUC);
+
         }
 
         private void AbrirEditarPedido(int idPedido)
         {
+
             panelDetalhes.Visible = true;
             panelDetalhes.Controls.Clear();
+
             EditarPedidoUC editar = new EditarPedidoUC(idPedido);
+
+            // ? AQUI É O PONTO IMPORTANTE
+            editar.PedidoAtualizado += AtualizarEmPreparo;
+
             editar.Dock = DockStyle.Fill;
             panelDetalhes.Controls.Add(editar);
+
+        }
+
+        private void AtualizarEmPreparo()
+        {
+            // pega o EmPreparo que já está na tela
+
+            foreach (Control ctrl in pnl_NvPedido.Controls)
+            {
+                if (emPreparoUC != null)
+                {
+                    emPreparoUC.CarregarUsuarios();
+                }
+            }
         }
 
 
